@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Johannes Zierenberg</title>
+    <description>Scientific life of Johannes Zierenberg
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 02 Feb 2017 21:21:36 +0100</pubDate>
+    <lastBuildDate>Thu, 02 Feb 2017 21:21:36 +0100</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Created new website!</title>
+        <description>&lt;p&gt;This is a new website generated with jekyll on github pages.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Feb 2017 22:02:00 +0100</pubDate>
+        <link>http://localhost:4000/jekyll/update/2017/02/02/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2017/02/02/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
