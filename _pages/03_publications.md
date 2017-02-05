@@ -39,7 +39,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        J. Phys.: Conf. Ser. 750, 012017 (2016) 
        [<a href="http://iopscience.iop.org/article/10.1088/1742-6596/750/1/012017">online</a>]
        [<a href="http://arxiv.org/abs/1605.05844">arxiv:1605.05844</a>]
-  <li> A. Nu&szligbaumer, J. Zierenberg, E. Bittner, and W. Janke, <br>
+  <li> A. Nußbaumer, J. Zierenberg, E. Bittner, and W. Janke, <br>
        <i>Numerical test of finite-size scaling predictions for the droplet condensation-evaporation transition</i>, <br>
        J. Phys.: Conf. Ser. 759, 012009 (2016)
        [<a href="http://iopscience.iop.org/article/10.1088/1742-6596/759/1/012009">online</a>]
