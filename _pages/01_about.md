@@ -13,7 +13,12 @@ interested in
 - the analogy between particle condensation and polymer aggregation
 - and what comes along the way
 
-Short course of scientific life:
+scientific networks:<br>
+[ORCID](http://orcid.org/0000-0001-5840-3791)<br>
+[Twitter](https://twitter.com/jozierenberg)<br>
+[ResearchGate](https://www.researchgate.net/profile/Johannes_Zierenberg)<br>
+
+Short course of scientific life:<br>
 I studied physics in Leipzig and Zürich before doing a phd in Prof. Wolfhard
 Janke's group in Leipzig. Now I am a postdoctoral researcher in Viola
 Priesemann's group in Göttingen. 
