@@ -10,7 +10,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <ol reversed>
   <li> S. Majumder, J. Zierenberg, and W. Janke <br>
        <i>Kinetics of polymer collapse: effect of temperature on cluster growth and aging</i><br> 
-       Soft Matter (2017), in print
+       Soft Matter 13, 1276 (2017), in print
        [<a href="http://pubs.rsc.org/en/content/articlehtml/2017/sm/c6sm02197b">online</a>]
   <li> J. Zierenberg, N. G. Fytas, M. Weigel, W. Janke, and A. Malakis<br>
        <i>  Scaling and universality in the phase diagram of the 2D Blume-Capel model</i><br>
