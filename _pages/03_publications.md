@@ -105,6 +105,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        <i>Simulating flexible polymers in a potential of randomly distributed hard disks</i>,<br>
        Phys. Rev. E 84, 051805 (2011)
        [<a href="http://pre.aps.org/abstract/PRE/v84/i5/e051805">online</a>]
+
 </ol>
 
 <h3>Other publications and theses</h3>
@@ -128,4 +129,5 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 	<li>J. Zierenberg, <i>Spontaneous Symmetry Breaking</i>, Bachelor Thesis,<br>
                 Universit&auml;t Leipzig, July 2008
           <!--[<a href="./work/zierenberg_spontaneousSymmetryBreaking.pdf">pdf</a>]-->
+
 </ul>
