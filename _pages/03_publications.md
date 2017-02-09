@@ -10,7 +10,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <ol reversed>
   <li> S. Majumder, J. Zierenberg, and W. Janke <br>
        <i>Kinetics of polymer collapse: effect of temperature on cluster growth and aging</i><br> 
-       Soft Matter 13, 1276 (2017), in print
+       Soft Matter 13, 1276 (2017)
        [<a href="http://pubs.rsc.org/en/content/articlehtml/2017/sm/c6sm02197b">online</a>]
   <li> J. Zierenberg, N. G. Fytas, M. Weigel, W. Janke, and A. Malakis<br>
        <i>  Scaling and universality in the phase diagram of the 2D Blume-Capel model</i><br>
@@ -47,7 +47,8 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        [<a href="http://arxiv.org/abs/1605.05591">arXiv:1605.05591</a>]
   <li> P. Schierz, J. Zierenberg, and W. Janke,<br>
        <i> Molecular Dynamics and Monte Carlo simulations in the microcanonical ensemble: Quantitative comparison and reweighting techniques </i>,<br>
-       J. Chem. Phys. 143, 134114 (2015) [<a href="http://scitation.aip.org/content/aip/journal/jcp/143/13/10.1063/1.4931484">online</a>] <br>
+       J. Chem. Phys. 143, 134114 (2015)
+       [<a href="http://scitation.aip.org/content/aip/journal/jcp/143/13/10.1063/1.4931484">online</a>] <br>
   <li> M. Mueller, J. Zierenberg, M. Marenz, P. Schierz, and W. Janke,<br>
        <i> Probing the effect of density on the aggregation temperature of semif-flexible polymers in spherical confinement</i>,<br>
        in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D. P. Landau, H.-B. Schüttler, S. Lewis and M. Bachmann, <br> 
@@ -60,40 +61,50 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        [<a href="http://arxiv.org/abs/1507.05755">arXiv:1507.05755</a>];<br>
   <li> J. Zierenberg, N.G. Fytas, and W. Janke, <br>
        <i>Parallel multicanonical study of the three-dimensional Blume-Capel model</i>,<br>
-       Phys. Rev. E 91, 032126 (2015) [<a href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.91.032126">online</a>] [<a href="http://arxiv.org/abs/1502.07214">arXiv:1502.07214</a>]<br>
+       Phys. Rev. E 91, 032126 (2015) 
+       [<a href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.91.032126">online</a>] 
+       [<a href="http://arxiv.org/abs/1502.07214">arXiv:1502.07214</a>]<br>
   <li> J. Zierenberg, M. Mueller, P. Schierz, M. Marenz and W. Janke, <br>
        <i>Aggregation of theta-polymers in spherical confinement</i>,<br>
-       J. Chem. Phys. 141, 114908 (2014) [<a href="http://scitation.aip.org/content/aip/journal/jcp/141/11/10.1063/1.4893307">online</a>] [<a href="http://arxiv.org/abs/1412.1322">arXiv:1412.1322 </a>]<br>
+       J. Chem. Phys. 141, 114908 (2014) 
+       [<a href="http://scitation.aip.org/content/aip/journal/jcp/141/11/10.1063/1.4893307">online</a>]
+       [<a href="http://arxiv.org/abs/1412.1322">arXiv:1412.1322 </a>]<br>
   <li> J. Zierenberg and W. Janke, <br>
        <i>From amorphous aggregates to polymer bundles:<br> The role of stiffness on structural phases in polymer aggregation</i>,<br>
-       Europhys. Lett. 109, 28002 (2015) [<a href="http://iopscience.iop.org/0295-5075/109/2/28002/">online</a>] [<a href="http://arxiv.org/abs/1401.3227">arXiv:1401.3227</a>].
+       Europhys. Lett. 109, 28002 (2015) 
+       [<a href="http://iopscience.iop.org/0295-5075/109/2/28002/">online</a>]
+       [<a href="http://arxiv.org/abs/1401.3227">arXiv:1401.3227</a>].
   <li> J. Zierenberg, M. Wiedenmann, and W. Janke,<br>
        <i>Application of the parallel multicanonical method to lattice gas condensation</i>,<br>
-       J. Phys.: Conf. Ser. 510, 012017 (2014) [<a href="http://dx.doi.org/10.1088/1742-6596/510/1/012017">online</a>] [<a href="http://arxiv.org/abs/1401.4076">arXiv:1401.4076 </a>]<br>
+       J. Phys.: Conf. Ser. 510, 012017 (2014)
+       [<a href="http://dx.doi.org/10.1088/1742-6596/510/1/012017">online</a>] 
+       [<a href="http://arxiv.org/abs/1401.4076">arXiv:1401.4076 </a>]<br>
   <li> J. Zierenberg, M. Marenz and W. Janke,<br>
        <i> Scaling properties of parallelized multicanonical simulations</i>,<br>
-       <!--Leipzig preprint (March 2013)[<a href="http://arxiv.org/abs/1312.2213">arXiv:1312.2213</a>(physics.comp-ph)];<br> 
-           
-       -->
        in: Computer Simulation Studies in Condensed-Matter Physics XXVI, eds. D.P. Landau, M. Bachmann, S.P Lewis, and H.-B. Schüttler, <br>
        Physics Procedia 53, 55 (2014)
-       [<a href="http://www.sciencedirect.com/science/article/pii/S1875389214000376">online</a>][<a href="http://arxiv.org/abs/1312.2213">arXiv:1312.2213</a>]
+       [<a href="http://www.sciencedirect.com/science/article/pii/S1875389214000376">online</a>]
+       [<a href="http://arxiv.org/abs/1312.2213">arXiv:1312.2213</a>]
        
   <li> J. Zierenberg, M. Marenz and W. Janke,<br>
        <i>Scaling properties of a parallel implementation of the multicanonical algorithm</i>,<br>
-       Comput. Phys. Comm. 184, 1155 (2013) [<a href="http://www.sciencedirect.com/science/article/pii/S001046551200402X">online</a>]
+       Comput. Phys. Comm. 184, 1155 (2013) 
+       [<a href="http://www.sciencedirect.com/science/article/pii/S001046551200402X">online</a>]
   
   <li> M. Marenz, J. Zierenberg, H. Arkin and W. Janke, <br>
        <i>Simple flexible polymers in a spherical cage</i>,<br>
-       Condens. Matter Phys. 15, 43008 (2012) [<a href="http://arxiv.org/abs/1212.6144">online</a>]
+       Condens. Matter Phys. 15, 43008 (2012)
+       [<a href="http://arxiv.org/abs/1212.6144">online</a>]
 
   <li> S. Schöbl, J. Zierenberg, and W. Janke,<br>
        <i>Influence of lattice disorder on the structure of persistent polymer chains</i>,<br>
-       J. Phys. A: Math. Theor. 45, 475002 (2012) [<a href="http://iopscience.iop.org/1751-8121/45/47/475002">online</a>]
+       J. Phys. A: Math. Theor. 45, 475002 (2012)
+       [<a href="http://iopscience.iop.org/1751-8121/45/47/475002">online</a>]
                 
   <li> S. Schöbl, J. Zierenberg, and W. Janke,<br>
        <i>Simulating flexible polymers in a potential of randomly distributed hard disks</i>,<br>
-       Phys. Rev. E 84, 051805 (2011) [<a href="http://pre.aps.org/abstract/PRE/v84/i5/e051805">online</a>]
+       Phys. Rev. E 84, 051805 (2011)
+       [<a href="http://pre.aps.org/abstract/PRE/v84/i5/e051805">online</a>]
 <!--</ol>-->
 
 <h3>Other publications and theses</h3>
