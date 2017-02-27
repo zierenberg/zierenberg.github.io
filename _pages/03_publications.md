@@ -7,36 +7,45 @@ see also <a href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ&hl=de&oi
 see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
   <ol reversed>
+  <!--
+  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg <br>
+       <i>Recent advances in phase transitions and critical phenomena</i>,<br> 
+       Eur. Phys. J. Special Topics, in print
+       [<a href="">online</a>]<br>
+       (Editorial of Special Issue)
+  </li>
+  -->
   <li> S. Majumder, J. Zierenberg, and W. Janke <br>
        <i>Kinetics of polymer collapse: effect of temperature on cluster growth and aging</i><br> 
        Soft Matter 13, 1276 (2017)
        [<a href="http://pubs.rsc.org/en/content/articlehtml/2017/sm/c6sm02197b">online</a>]
   </li>
   <li> J. Zierenberg, N. G. Fytas, M. Weigel, W. Janke, and A. Malakis<br>
-       <i>  Scaling and universality in the phase diagram of the 2D Blume-Capel model</i><br>
-       submitted to Eur. Phys. J. Special Topics
+       <i>  Scaling and universality in the phase diagram of the 2D Blume-Capel model</i>,<br>
+       Eur. Phys. J. Special Topics, in print
        [<a href="https://arxiv.org/abs/1612.02138">arxiv:1612.02138</a>]
   </li>
   <li> J. Zierenberg, K. Tholen, and W. Janke<br>
        <i> Effect of grafting on the binding transition of two flexible polymers</i><br>
-       submitted to Eur. Phys. J. Special Topics
+       Eur. Phys. J. Special Topics, in print
        [<a href="https://arxiv.org/abs/1612.01778">arxiv:1612.01778</a>]
   </li>
   <li> J. Zierenberg, M. Marenz, and W. Janke<br>
-       <i>Dilute Semiflexible Polymers with Attraction: Collapse, Folding and Aggregation</i><br>
+       <i>Dilute Semiflexible Polymers with Attraction: Collapse, Folding and Aggregation</i>,<br>
        Polymers 8, 333 (2016)
        [<a href="http://www.mdpi.com/2073-4360/8/9/333">online</a>]<br>
        (Invited Review)
   </li>
   <li> P. Schierz, J. Zierenberg, and W. Janke <br>
-       <i>First-order phase transitions in the real microcanonical ensemble</i><br>
+       <i>First-order phase transitions in the real microcanonical ensemble</i>,<br>
        Phys. Rev. E 94, 021301(R) (2016) 
        [<a href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.94.021301">online</a>]<br> 
        (Editor's Suggestion)
   </li>
   <li> J. Zierenberg, P. Schierz, and W. Janke <br>
        <i>Canonical free-energy barrier of particle and polymer cluster formation</i>, <br>
-       Nature Communications (2017), in print. 
+       Nature Communications 8, 14546 (2017). 
+       [<a href="http://rdcu.be/pCFC">online</a>]
        [<a href="http://arxiv.org/abs/1607.08355">arxiv:1607.08355</a>]
   </li>
   <li> J. Zierenberg and W. Janke <br>
@@ -82,7 +91,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        [<a href="http://arxiv.org/abs/1412.1322">arXiv:1412.1322 </a>]<br>
   </li>
   <li> J. Zierenberg and W. Janke, <br>
-       <i>From amorphous aggregates to polymer bundles:<br> The role of stiffness on structural phases in polymer aggregation</i>,<br>
+       <i>From amorphous aggregates to polymer bundles: The role of stiffness on structural phases in polymer aggregation</i>,<br>
        Europhys. Lett. 109, 28002 (2015) 
        [<a href="http://iopscience.iop.org/0295-5075/109/2/28002/">online</a>]
        [<a href="http://arxiv.org/abs/1401.3227">arXiv:1401.3227</a>].

@@ -58,6 +58,9 @@ time {
 	max-width: $content-width;
 	margin: 0 auto;
 }
+li{
+  margin: 10px 0;
+}
 
 /* Aside */
 
@@ -73,12 +76,13 @@ aside {
 	nav {
 		float: left;
 		max-width: 800px;
-		margin: 0 auto;
+		margin: 0 auto; 
 		ul {
 			margin: 0;
 			padding: 0;
 			list-style: none;
 			li {
+			  margin: 0 0;
 				float: left;
 				position: relative;
 				a {
