@@ -8,4 +8,4 @@ Dr. Johannes Zierenberg<br>
 Am Fassberg 17<br>
 37077 Göttingen
 
-My current e-mail is [johannes.zierenerg@ds.mpg.de](mailto:johannes.zierenberg@ds.mpg.de).
+My current e-mail is [johannes.zierenberg@ds.mpg.de](mailto:johannes.zierenberg@ds.mpg.de).
