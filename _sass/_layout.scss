@@ -58,8 +58,22 @@ time {
 	max-width: $content-width;
 	margin: 0 auto;
 }
-li{
-  margin: 10px 0;
+listpub {
+  li{
+    margin: 10px 0;
+  }
+	font-size: 0.8em;
+	journal{
+	  font-weight: bold;
+  }
+	pubtitle{
+	  font-style: italic;
+  }
+}
+news{
+  dl{
+    margin: 10px 0;
+  }
 }
 
 /* Aside */
