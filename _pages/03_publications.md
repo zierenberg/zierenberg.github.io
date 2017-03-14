@@ -26,7 +26,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        <pubtitle><a href="">
        Scaling and universality in the phase diagram of the 2D Blume-Capel model,
        </a></pubtitle>
-       <journal>Eur. Phys. J. Special Topics </journal>, 
+       <journal>Eur. Phys. J. Special Topics </journal>
        226, xxxx (2017) in print
        [<a href="https://arxiv.org/abs/1612.02138">arxiv:1612.02138</a>]
   </li>
@@ -34,7 +34,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        <pubtitle><a href="">
        Effect of grafting on the binding transition of two flexible polymers,
        </a></pubtitle>
-       <journal>Eur. Phys. J. Special Topics</journal>,
+       <journal>Eur. Phys. J. Special Topics</journal>
        226, xxxx (2017) in print 
        [<a href="https://arxiv.org/abs/1612.01778">arxiv:1612.01778</a>]
   </li>
@@ -52,7 +52,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        </a></pubtitle>
        <journal>Phys. Rev. E</journal>
        94, 021301(R) (2016) 
-       (Editors Suggestion)
+       (Editor&#039;s Suggestion)
   </li>
   <li> J. Zierenberg, P. Schierz, and W. Janke,
        <pubtitle><a href="http://rdcu.be/pCFC">
@@ -173,9 +173,17 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </listpub>
 </ol>
 
-<h3>Other publications and theses</h3>
+<h3>Other publications, collections, and theses</h3>
 <ul>
   <listpub>
+  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
+       <pubtitle><a href="">
+       Recent advances in phase transitions and critical phenomena,
+       </a></pubtitle>
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226 (2017) <br>
+       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)
+  </li>
   <li> J. Zierenberg, 
       <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
       From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
