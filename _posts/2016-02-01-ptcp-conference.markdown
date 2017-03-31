@@ -4,4 +4,5 @@ title:  Conference on recent advances in Phase Transitions and Critical Phenomen
 date:   2016-02-01 12:00:00
 categories: conferences
 ---
+You are being redirected to the conference website
 <meta http-equiv="refresh" content="0; url=http://ptcp16.complexity-coventry.org" />
