@@ -8,6 +8,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
+  <!--
   <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
        <pubtitle><a href="">
        Recent advances in phase transitions and critical phenomena,
@@ -16,6 +17,13 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        226, xxxx (2017) in print 
        (Editorial of Special Issue)
   </li>
+  -->
+  <li> N. Fricke, J. Zierenberg, M. Marenz, F.P. Spitzner, V. Blavatska, W. Janke,
+       <pubtitle><a href="http://www.icmp.lviv.ua/journal/zbirnyk.89/13004/abstract.html">
+       Scaling laws for random walks in long-range correlated disordered media,
+       </a></pubtitle>
+       <journal> Condens. Matter Phys.</journal> 20, 13004 (2017)
+       [<a href="https://arxiv.org/abs/1703.10368">arxiv:1703.10368</a>]
   <li> S. Majumder, J. Zierenberg, and W. Janke,
        <pubtitle><a href="http://pubs.rsc.org/en/content/articlehtml/2017/sm/c6sm02197b">
        Kinetics of polymer collapse: effect of temperature on cluster growth and aging,
@@ -176,7 +184,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Other publications, collections, and theses</h3>
 <ul>
   <listpub>
-  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
+  <!--<li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
        <pubtitle><a href="">
        Recent advances in phase transitions and critical phenomena,
        </a></pubtitle>
@@ -184,6 +192,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        226 (2017) <br>
        (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)
   </li>
+  -->
   <li> J. Zierenberg, 
       <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
       From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
