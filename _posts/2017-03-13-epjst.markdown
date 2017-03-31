@@ -1,0 +1,13 @@
+---
+layout: post
+title:  Upcoming EPJ - Special Topics on Recent advances in phase transitions and critical phenomena
+date:   2017-03-13 12:00:00
+categories: articles
+---
+
+We collected contributions by leading experts of the field on phase transitions
+and critical phenomena to provide a current perspective on the topics of
+interest. Currently all articles are in the final proof stage and will shortly
+be available on European Physics Journal - Special Topics. 
+
+Thank you to all contributers and enjoy reading.
