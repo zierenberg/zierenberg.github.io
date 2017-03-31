@@ -24,6 +24,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        </a></pubtitle>
        <journal> Condens. Matter Phys.</journal> 20, 13004 (2017)
        [<a href="https://arxiv.org/abs/1703.10368">arxiv:1703.10368</a>]
+  </li>
   <li> S. Majumder, J. Zierenberg, and W. Janke,
        <pubtitle><a href="http://pubs.rsc.org/en/content/articlehtml/2017/sm/c6sm02197b">
        Kinetics of polymer collapse: effect of temperature on cluster growth and aging,
