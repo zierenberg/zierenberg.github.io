@@ -14,7 +14,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        Recent advances in phase transitions and critical phenomena,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics </journal>
-       226, xxxx (2017) in print 
+       226, 533 (2017)
        (Editorial of Special Issue)
   </li>
   -->
@@ -36,7 +36,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        Scaling and universality in the phase diagram of the 2D Blume-Capel model,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics </journal>
-       226, xxxx (2017) in print
+       226, 789 (2017)
        [<a href="https://arxiv.org/abs/1612.02138">arxiv:1612.02138</a>]
   </li>
   <li> J. Zierenberg, K. Tholen, and W. Janke,
@@ -44,7 +44,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        Effect of grafting on the binding transition of two flexible polymers,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics</journal>
-       226, xxxx (2017) in print 
+       226, 683 (2017)
        [<a href="https://arxiv.org/abs/1612.01778">arxiv:1612.01778</a>]
   </li>
   <li> J. Zierenberg, M. Marenz, and W. Janke,
@@ -190,8 +190,8 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        Recent advances in phase transitions and critical phenomena,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics </journal>
-       226 (2017) <br>
-       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)
+       226, Vol 4, 533- (2017) <br>
+       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)<br>
   </li>
   -->
   <li> J. Zierenberg, 
