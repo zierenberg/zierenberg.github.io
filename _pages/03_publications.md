@@ -8,16 +8,6 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
-  <!--
-  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
-       <pubtitle><a href="">
-       Recent advances in phase transitions and critical phenomena,
-       </a></pubtitle>
-       <journal>Eur. Phys. J. Special Topics </journal>
-       226, 533 (2017)
-       (Editorial of Special Issue)
-  </li>
-  -->
   <li> N. Fricke, J. Zierenberg, M. Marenz, F.P. Spitzner, V. Blavatska, W. Janke,
        <pubtitle><a href="http://www.icmp.lviv.ua/journal/zbirnyk.89/13004/abstract.html">
        Scaling laws for random walks in long-range correlated disordered media,
@@ -32,7 +22,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        <journal>Soft Matter</journal> 13, 1276 (2017) 
   </li>
   <li> J. Zierenberg, N. G. Fytas, M. Weigel, W. Janke, and A. Malakis,
-       <pubtitle><a href="">
+       <pubtitle><a href="http://link.springer.com/article/10.1140/epjst/e2016-60337-x">
        Scaling and universality in the phase diagram of the 2D Blume-Capel model,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics </journal>
@@ -40,7 +30,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        [<a href="https://arxiv.org/abs/1612.02138">arxiv:1612.02138</a>]
   </li>
   <li> J. Zierenberg, K. Tholen, and W. Janke,
-       <pubtitle><a href="">
+       <pubtitle><a href="http://rdcu.be/qEYi">
        Effect of grafting on the binding transition of two flexible polymers,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics</journal>
@@ -185,15 +175,17 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Other publications, collections, and theses</h3>
 <ul>
   <listpub>
-  <!--<li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
-       <pubtitle><a href="">
+  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
+       <pubtitle><a href="http://link.springer.com/journal/11734/226/4/page/1">
        Recent advances in phase transitions and critical phenomena,
        </a></pubtitle>
        <journal>Eur. Phys. J. Special Topics </journal>
-       226, Vol 4, 533- (2017) <br>
+       226, Vol 4, 533-804 (2017) <br>
        (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)<br>
+       <a href="http://link.springer.com/article/10.1140/epjst/e2017-70019-3"> Editorial </a>, 
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226, Vol 4, 533-537 (2017) <br>
   </li>
-  -->
   <li> J. Zierenberg, 
       <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
       From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
