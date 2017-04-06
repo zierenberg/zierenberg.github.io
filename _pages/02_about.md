@@ -4,6 +4,9 @@ title: About
 permalink: /about/
 ---
 
+<img style="float: right; margin-left: 5px" width="200px" src="../data/profile.jpg">
+
+
 I am a theoretical physicist now in Neuroscience. Amongs others, I am
 interested in 
 
@@ -13,14 +16,13 @@ interested in
 - the analogy between particle condensation and polymer aggregation
 - and what comes along the way
 
+E-mail:<br>
+[johannes.zierenberg@ds.mpg.de](mailto:johannes.zierenberg@ds.mpg.de).
+
 Address:<br>
-<!--![profile image](./ "Johannes Zierenberg")-->
 Dr. Johannes Zierenberg<br>
 Am Fassberg 17<br>
 37077 Göttingen
-
-E-mail:<br>
-[johannes.zierenberg@ds.mpg.de](mailto:johannes.zierenberg@ds.mpg.de).
 
 scientific networks:<br>
 [ORCID](http://orcid.org/0000-0001-5840-3791)<br>
