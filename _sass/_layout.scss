@@ -75,6 +75,18 @@ news{
     margin: 10px 0;
   }
 }
+.profile{
+     float: right; 
+     margin-left: 5px; 
+     width: 200px;
+}
+@media screen and (max-width: 480px){
+  .profile{
+     width: 100%;
+     floag: left;
+     margin: 0 0 .5em 0;   
+  }
+}
 
 /* Aside */
 

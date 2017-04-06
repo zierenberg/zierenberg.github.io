@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img style="float: right; margin-left: 5px" width="200px" src="../data/profile.jpg">
+<img class="profile" src="../data/profile.jpg">
 
 
 I am a theoretical physicist now in Neuroscience. Amongs others, I am
