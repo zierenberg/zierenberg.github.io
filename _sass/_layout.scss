@@ -80,7 +80,7 @@ news{
      margin-left: 5px; 
      width: 200px;
 }
-@media screen and (max-width: 480px) and (orientation: portrait){
+@media screen and (max-device-width: 480px) and (orientation: portrait){
   .profile{
      width: 100%;
      margin: 0 0 .5em 0;   
