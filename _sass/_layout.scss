@@ -80,10 +80,10 @@ news{
      margin-left: 5px; 
      width: 200px;
 }
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) and (orientation: portrait){
   .profile{
-     width: max-width;
-     float: left;
+     width: 300px;
+     float: center;
      margin: 0 0 .5em 0;   
   }
 }
