@@ -82,8 +82,8 @@ news{
 }
 @media screen and (max-width: 480px){
   .profile{
-     width: 100%;
-     floag: left;
+     width: $content-width;
+     float: left;
      margin: 0 0 .5em 0;   
   }
 }
