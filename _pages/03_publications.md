@@ -172,9 +172,9 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </listpub>
 </ol>
 
-<h3>Other publications, collections, and theses</h3>
-<ul>
-  <listpub>
+<h3>Books and Collections</h3>
+<ol reversed>
+<listpub>
   <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
        <pubtitle><a href="http://link.springer.com/journal/11734/226/4/page/1">
        Recent advances in phase transitions and critical phenomena,
@@ -186,6 +186,12 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        <journal>Eur. Phys. J. Special Topics </journal>
        226, Vol 4, 533-537 (2017) <br>
   </li>
+</listpub>
+</ol>
+
+<h3>Other publications and theses</h3>
+<ul>
+  <listpub>
   <li> J. Zierenberg, 
       <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
       From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
