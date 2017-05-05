@@ -14,6 +14,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        </a></pubtitle>
        <journal>Macromolecules</journal> (2017) 
        doi:10.1021/acs.macromol.6b02738
+  </li>
   <li> N. Fricke, J. Zierenberg, M. Marenz, F.P. Spitzner, V. Blavatska, W. Janke,
        <pubtitle><a href="http://www.icmp.lviv.ua/journal/zbirnyk.89/13004/abstract.html">
        Scaling laws for random walks in long-range correlated disordered media,
