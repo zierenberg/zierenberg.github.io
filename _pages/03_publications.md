@@ -8,14 +8,13 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
-  <li> K. S. Austin, J. Zierenberg , and W. Janke,
+  <li> K. S. Austin, J. Zierenberg, and W. Janke,
        <pubtitle><a href="http://pubs.acs.org/doi/full/10.1021/acs.macromol.6b02738">
        Interplay of adsorption and semiflexibility: Structural behavior of grafted polymers under poor solvent conditions,
        </a></pubtitle>
-       <journal>Macromolecules</journal> (2017) 
-       doi:10.1021/acs.macromol.6b02738
+       <journal>Macromolecules</journal> 50, 4054 (2017) 
   </li>
-  <li> N. Fricke, J. Zierenberg, M. Marenz, F.P. Spitzner, V. Blavatska, W. Janke,
+  <li> N. Fricke, J. Zierenberg, M. Marenz, F.P. Spitzner, V. Blavatska, and W. Janke,
        <pubtitle><a href="http://www.icmp.lviv.ua/journal/zbirnyk.89/13004/abstract.html">
        Scaling laws for random walks in long-range correlated disordered media,
        </a></pubtitle>
