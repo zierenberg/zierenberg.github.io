@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Press release of "Canonical free-energy barrier of particle and polymer cluster formation"
-date:   2017-03-13 12:00:00
+date:   2017-03-29 12:00:00
 categories: articles
 ---
 
