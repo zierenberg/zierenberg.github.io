@@ -202,7 +202,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
       <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
       From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
       PhD Thesis, Universit&auml;t Leipzig, January 2016 (submitted June 2015)
-                <!--[<a href="./work/zierenberg_phd.pdf">pdf</a>]-->
+      [<a href="../data/thesis_quosa.pdf">pdf</a>]
   </li>
 	<li> J. Zierenberg, 
 	     <pubtitle><a href="">Tip4p Water Model in the Ice I<sub>h</sub> Configuration</a></pubtitle>, 
