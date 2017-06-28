@@ -3,7 +3,7 @@ title: Johannes Zierenberg
 email: johannes.zierenberg@ds.mpg.de
 description: > # this means to ignore newlines until "baseurl:"
   Scientific life of Johannes Zierenberg
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/zierenberg.github.io" # the subpath of your site, e.g. /blog/
 url: "http://zierenberg.github.io" # the base hostname & protocol for your site
 twitter_username: jozierenberg
 github_username:  zierenberg
