@@ -21,7 +21,7 @@ E-mail:<br>
 
 Address:<br>
 Dr. Johannes Zierenberg<br>
-Max Planck Institute for Dynamics and Self-Organsization<br>
+Max Planck Institute for Dynamics and Self-Organization<br>
 Am Fassberg 17<br>
 37077 Göttingen
 
