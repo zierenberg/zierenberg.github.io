@@ -8,6 +8,10 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
+  <li> J. Gross, J. Zierenberg, M. Weigel, and W. Janke,
+       <pubtitle><a href="https://arxiv.org/abs/1707.00919"> Massively parallel multicanonical simulations
+       </a></pubtitle>
+       <journal>arXiv</journal> (2017)
   <li> K. S. Austin, J. Zierenberg, and W. Janke,
        <pubtitle><a href="http://pubs.acs.org/doi/full/10.1021/acs.macromol.6b02738">
        Interplay of adsorption and semiflexibility: Structural behavior of grafted polymers under poor solvent conditions,
