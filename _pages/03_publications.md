@@ -64,7 +64,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
        (Editor&#039;s Suggestion)
   </li>
   <li> J. Zierenberg, P. Schierz, and W. Janke,
-       <pubtitle><a href="http://rdcu.be/pCFC">
+       <pubtitle><a href="https://www.nature.com/articles/ncomms14546">
        Canonical free-energy barrier of particle and polymer cluster formation,
        </a></pubtitle>
        <journal>Nature Communications</journal>
