@@ -8,6 +8,11 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
+  <li> W. Janke, P. Schierz, and J. Zierenberg,
+       <pubtitle><a href="https://arxiv.org/abs/1707.05963">  Transition barrier at a first-order phase transition in the canonical and microcanonical ensemble
+       </a></pubtitle>
+       <journal>arXiv</journal> (2017)
+  </li>
   <li> J. Gross, J. Zierenberg, M. Weigel, and W. Janke,
        <pubtitle><a href="https://arxiv.org/abs/1707.00919"> Massively parallel multicanonical simulations
        </a></pubtitle>
