@@ -1,21 +1,23 @@
 #!/usr/bin/python
 import numpy
 import re
-
+import fileinput
 
 publications="./data/publications.dat"
 data = numpy.genfromtxt(publications, dtype='str', delimiter=";")
 FILE=open("./data/auto_publications.html", "w")
 
+list_publications=""
 for entry in data:
     year=entry[0]
-    authors=entry[1]
-    title=entry[2]
-    journal=entry[3]
-    volume=entry[4]
-    pages=entry[5]
+    journal=entry[1]
+    volume=entry[2]
+    pages=entry[3]
+    authors=entry[4]
+    title=entry[5]
     link=entry[6]
-    entry_formatted="<li>"
+    comments=entry[7]
+    entry_formatted="\n<li>"
     #modify author list:
     author_names=authors.split("and")
     for i in range(len(author_names)):
@@ -47,6 +49,18 @@ for entry in data:
         entry_formatted+=", %s"%pages
     if year:
         entry_formatted+=" (%s)."%year
+    if len(comments)>2:
+        entry_formatted+="\n%s"%comments
     entry_formatted+="\n</li>\n"
     FILE.write(entry_formatted)
+    list_publications+="%s"%entry_formatted
+FILE.close()
+
+#now insert auto_publications into _pages/03_publications.md at the correct place
+filestring=open("auto_pages/publications.md.mask").read()
+mark='<!-- List of journal publications start -->'
+start, end = filestring.split(mark,1)
+filestring=start+mark+list_publications+end
+FILE=open("_pages/03_publications.md", "w")
+FILE.write(filestring)
 FILE.close()

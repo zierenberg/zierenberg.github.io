@@ -1,0 +1,61 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+---
+see also <a href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ&hl=de&oi=ao">google scholar</a><br>
+see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
+<h3>Journal Articles and Conference Proceedings</h3>
+<ol reversed>
+<listpub>
+<!-- List of journal publications start -->
+<!-- List of journal publications end   -->
+</listpub>
+</ol>
+
+<h3>Books and Collections</h3>
+<ol reversed>
+<listpub>
+  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
+       <pubtitle><a href="http://link.springer.com/journal/11734/226/4/page/1">
+       Recent advances in phase transitions and critical phenomena,
+       </a></pubtitle>
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226, Vol 4, 533-804 (2017) <br>
+       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)<br>
+       <a href="http://link.springer.com/article/10.1140/epjst/e2017-70019-3"> Editorial </a>, 
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226, Vol 4, 533-537 (2017) <br>
+  </li>
+  <!-- List of book publications start -->
+  <!-- List of book publications end   -->
+</listpub>
+</ol>
+
+<h3>Other publications and theses</h3>
+<ul>
+  <listpub>
+  <!-- List of other publications start -->
+  <!-- List of other publications end   -->
+  <li> J. Zierenberg, 
+      <pubtitle><a href="http://nbn-resolving.de/urn:nbn:de:bsz:15-qucosa-197255">
+      From Particle Condensation to Polymer Aggregation: Phase Transitions and Structural Phases in Mesoscopic Systems,</a></pubtitle>
+      PhD Thesis, Universit&auml;t Leipzig, January 2016 (submitted June 2015)
+      [<a href="{{ site.url }}/data/thesis_zierenberg.pdf">pdf</a>]
+  </li>
+	<li> J. Zierenberg, 
+	     <pubtitle><a href="">Tip4p Water Model in the Ice I<sub>h</sub> Configuration</a></pubtitle>, 
+	     Master Thesis, Universit&auml;t Leipzig, December 2010
+                <!-- [<a href="./work/zierenberg_iceTip4p.pdf">pdf</a>]-->
+  </li>
+	<li> A. Herrmann, J. Zierenberg,
+	   <pubtitle><a href="">Qualitative Quantit&auml;t! Kritische &Uuml;berlegungen zum Phlogiston auf dem Basar der Wissenschaften, </a></pubtitle> 
+	   Science: Who Cares?, 127-130, Meine Verlag, 2010
+  </li>
+	<li>J. Zierenberg, 
+	    <pubtitle><a href="">Spontaneous Symmetry Breaking</a></pubtitle>, 
+	    Bachelor Thesis, Universit&auml;t Leipzig, July 2008
+          <!--[<a href="./work/zierenberg_spontaneousSymmetryBreaking.pdf">pdf</a>]-->
+  </li>
+  </listpub>
+</ul>
