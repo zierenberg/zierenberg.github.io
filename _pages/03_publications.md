@@ -66,7 +66,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <li>J. Zierenberg and W. Janke,
 <pubtitle><a href=" http://iopscience.iop.org/article/10.1088/1742-6596/750/1/012017"> Finite-size scaling of Lennard-Jones droplet formation at fixed density,</a></pubtitle>
 <journal> J. Phys.: Conf. Ser.</journal>  750,  012017 (2016).
- in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D.P. Landau, H.-B. Schüttler, S. Lewis, and M. Bachmann<br>[<a href="http://arxiv.org/abs/1605.05844">arxiv</a>]
+ in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D.P. Landau, H.-B. Schüttler, S. Lewis, and M. Bachmann [<a href="http://arxiv.org/abs/1605.05844">arxiv</a>]
 </li>
 
 <li>A. Nußbaumer, J. Zierenberg, E. Bittner and W. Janke,
