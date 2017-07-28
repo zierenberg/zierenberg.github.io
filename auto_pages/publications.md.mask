@@ -5,13 +5,6 @@ permalink: /publications/
 ---
 see also <a href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ&hl=de&oi=ao">google scholar</a><br>
 see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
-<h3>Journal Articles and Conference Proceedings</h3>
-<ol reversed>
-<listpub>
-<!-- List of journal publications start -->
-<!-- List of journal publications end   -->
-</listpub>
-</ol>
 
 <h3>Books and Collections</h3>
 <ol reversed>
@@ -29,6 +22,14 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
   </li>
   <!-- List of book publications start -->
   <!-- List of book publications end   -->
+</listpub>
+</ol>
+
+<h3>Journal Articles and Conference Proceedings</h3>
+<ol reversed>
+<listpub>
+<!-- List of journal publications start -->
+<!-- List of journal publications end   -->
 </listpub>
 </ol>
 
