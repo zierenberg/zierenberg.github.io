@@ -5,6 +5,26 @@ permalink: /publications/
 ---
 see also <a href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ&hl=de&oi=ao">google scholar</a><br>
 see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
+
+<h3>Books and Collections</h3>
+<ol reversed>
+<listpub>
+  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
+       <pubtitle><a href="http://link.springer.com/journal/11734/226/4/page/1">
+       Recent advances in phase transitions and critical phenomena,
+       </a></pubtitle>
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226, Vol 4, 533-804 (2017) <br>
+       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)<br>
+       <a href="http://link.springer.com/article/10.1140/epjst/e2017-70019-3"> Editorial </a>, 
+       <journal>Eur. Phys. J. Special Topics </journal>
+       226, Vol 4, 533-537 (2017) <br>
+  </li>
+  <!-- List of book publications start -->
+  <!-- List of book publications end   -->
+</listpub>
+</ol>
+
 <h3>Journal Articles and Conference Proceedings</h3>
 <ol reversed>
 <listpub>
@@ -81,8 +101,9 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </li>
 
 <li>M. Mueller, J. Zierenberg, M. Marenz, P. Schierz and W. Janke,
-<pubtitle><a href=" in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D. P. Landau, H.-B. Schüttler, S. Lewis and M. Bachmann"> http://www.sciencedirect.com/science/article/pii/S1875389215007257,</a></pubtitle>
+<pubtitle><a href=" http://www.sciencedirect.com/science/article/pii/S1875389215007257"> Probing the Effect of Density on the Aggregation Temperature of Semi-flexible Polymers in Spherical Confinement,</a></pubtitle>
 <journal> Physics Procedia</journal>  68,  95 (2015).
+ in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D. P. Landau, H.-B. Schüttler, S. Lewis and M. Bachmann
 </li>
 
 <li>J. Zierenberg and W. Janke,
@@ -142,25 +163,6 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </li>
 
 <!-- List of journal publications end   -->
-</listpub>
-</ol>
-
-<h3>Books and Collections</h3>
-<ol reversed>
-<listpub>
-  <li> M. Bachmann, E. Bittner, N. G. Fytas, R. Kenna, M. Weigel, and J. Zierenberg (Eds),
-       <pubtitle><a href="http://link.springer.com/journal/11734/226/4/page/1">
-       Recent advances in phase transitions and critical phenomena,
-       </a></pubtitle>
-       <journal>Eur. Phys. J. Special Topics </journal>
-       226, Vol 4, 533-804 (2017) <br>
-       (Festschrift on the occasion of Wolfhard Janke&#039;s 60th birthday)<br>
-       <a href="http://link.springer.com/article/10.1140/epjst/e2017-70019-3"> Editorial </a>, 
-       <journal>Eur. Phys. J. Special Topics </journal>
-       226, Vol 4, 533-537 (2017) <br>
-  </li>
-  <!-- List of book publications start -->
-  <!-- List of book publications end   -->
 </listpub>
 </ol>
 
