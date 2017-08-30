@@ -29,6 +29,11 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <ol reversed>
 <listpub>
 <!-- List of journal publications start -->
+<li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
+<pubtitle><a href=" https://arxiv.org/abs/1708.02296">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
+<journal> arxiv</journal> (2017).
+</li>
+
 <li>W. Janke, P. Schierz and J. Zierenberg,
 <pubtitle><a href=" https://arxiv.org/abs/1707.05963"> Transition barrier at a first-order phase transition in the canonical and microcanonical ensemble,</a></pubtitle>
 <journal> arxiv</journal> (2017).

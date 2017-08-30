@@ -57,7 +57,7 @@ for entry in data:
 FILE.close()
 
 #now insert auto_publications into _pages/03_publications.md at the correct place
-filestring=open("auto_pages/publications.md.mask").read()
+filestring=open(".auto_pages/publications.md.mask").read()
 mark='<!-- List of journal publications start -->'
 start, end = filestring.split(mark,1)
 filestring=start+mark+list_publications+end
