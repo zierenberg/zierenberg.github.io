@@ -34,3 +34,7 @@ Short course of scientific life:<br>
 I studied physics in Leipzig and Zürich before doing a phd in Prof. Wolfhard
 Janke's group in Leipzig. Now I am a postdoctoral researcher in Viola
 Priesemann's group in Göttingen. 
+
+Institute pages:
+<br>[Göttingen](http://www.chaos.gwdg.de/people/zierenberg)
+<br>[Leipzig](http://www.physik.uni-leipzig.de/~zierenberg)
