@@ -29,6 +29,11 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <ol reversed>
 <listpub>
 <!-- List of journal publications start -->
+<li>W. Janke, M. Marenz and J. Zierenberg,
+<pubtitle><a href=" https://link.springer.com/article/10.1134/S1995080217050171"> Generalized ensemble computer simulations for structure formation of semiflexible polymers,</a></pubtitle>
+<journal> Lobachevskii J. Math.</journal>  38,  978 (2017).
+</li>
+
 <li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
 <pubtitle><a href=" https://arxiv.org/abs/1708.02296">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
 <journal> arxiv</journal> (2017).
