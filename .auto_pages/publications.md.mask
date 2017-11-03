@@ -25,13 +25,26 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </listpub>
 </ol>
 
-<h3>Journal Articles and Conference Proceedings</h3>
+<h3>Journal Articles</h3>
 <ol reversed>
 <listpub>
 <!-- List of journal publications start -->
 <!-- List of journal publications end   -->
 </listpub>
 </ol>
+
+<h3>Conference Proceedings</h3>
+<h6> My conference proceedings are generally not copies of original research.
+Instead, I try to provide a new perspective on previous results, extend them
+with new data, or draw new connections between different works. So they are
+worth taking a look at.</h6> 
+<ol reversed>
+<listpub>
+<!-- List of proceedings start -->
+<!-- List of proceedings end   -->
+</listpub>
+</ol>
+
 
 <h3>Other publications and theses</h3>
 <ul>
