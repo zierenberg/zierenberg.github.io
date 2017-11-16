@@ -31,13 +31,14 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <!-- List of journal publications start -->
 <li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
 <pubtitle><a href=" https://arxiv.org/abs/1708.02296">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
-<journal> arxiv</journal> (2017).
+<journal> Phys. Rev. E</journal> (2017).
+ (in print)
 </li>
 
 <li>J. Gross, J. Zierenberg, M. Weigel and W. Janke,
 <pubtitle><a href=" http://www.sciencedirect.com/science/article/pii/S0010465517303697"> Massively parallel multicanonical simulations,</a></pubtitle>
 <journal> Comput. Phys. Commun.</journal> (2017).
- (in press) [<a href="https://arxiv.org/abs/1707.00919">arxiv</a>]
+ (in print) [<a href="https://arxiv.org/abs/1707.00919">arxiv</a>]
 </li>
 
 <li>K.S. Austin, J. Zierenberg and W. Janke,
