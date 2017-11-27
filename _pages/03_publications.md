@@ -152,8 +152,9 @@ worth taking a look at.</h6>
 </li>
 
 <li>W. Janke, P. Schierz and J. Zierenberg,
-<pubtitle><a href=" https://arxiv.org/abs/1707.05963"> Transition barrier at a first-order phase transition in the canonical and microcanonical ensemble,</a></pubtitle>
-<journal> arxiv</journal> (2017).
+<pubtitle><a href=" http://iopscience.iop.org/article/10.1088/1742-6596/921/1/012018"> Transition barrier at a first-order phase transition in the canonical and microcanonical ensemble,</a></pubtitle>
+<journal> J. Phys.: Conf. Ser.</journal>  921,  012018 (2017).
+ [<a href="https://arxiv.org/abs/1707.05963">arxiv</a>]
 </li>
 
 <li>J. Zierenberg and W. Janke,
