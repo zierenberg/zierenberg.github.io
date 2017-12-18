@@ -30,9 +30,9 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <listpub>
 <!-- List of journal publications start -->
 <li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
-<pubtitle><a href=" https://arxiv.org/abs/1708.02296">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
-<journal> Phys. Rev. E</journal> (2017).
- (in print)
+<pubtitle><a href=" https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.062125">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
+<journal> Phys. Rev. E</journal>  96,  062125 (2017).
+ [<a href="https://arxiv.org/abs/1708.02296">arxiv</a>]
 </li>
 
 <li>J. Gross, J. Zierenberg, M. Weigel and W. Janke,
