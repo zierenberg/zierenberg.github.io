@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  First-order phase transitions in the real microcanonical ensemble (Publication Nr.16) was selected Editor's Suggestion
+title:  First-order phase transitions in the real microcanonical ensemble (Publication Nr.11) was selected Editor's Suggestion
 date:   2016-08-20 12:00:00
 categories: articles
 ---

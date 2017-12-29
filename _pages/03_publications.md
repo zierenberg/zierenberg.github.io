@@ -29,6 +29,11 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <ol reversed>
 <listpub>
 <!-- List of journal publications start -->
+<li>N.G. Fytas, J. Zierenberg, P.E. Theodorakis, M. Weigel, W. Janke and A. Malakis,
+<pubtitle><a href=" https://arxiv.org/abs/1712.07703"> Universality from disorder in the random-bond Blume-Capel model,</a></pubtitle>
+<journal> arxiv</journal> (2017).
+</li>
+
 <li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
 <pubtitle><a href=" https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.062125">  Percolation thresholds and fractal dimensions for square and cubic lattices with long-range correlated defects,</a></pubtitle>
 <journal> Phys. Rev. E</journal>  96,  062125 (2017).
