@@ -151,6 +151,12 @@ worth taking a look at.</h6>
 <ol reversed>
 <listpub>
 <!-- List of proceedings start -->
+<li>W. Janke and J. Zierenberg,
+<pubtitle><a href=" "> From particle condensation to polymer aggregation,</a></pubtitle>
+<journal> </journal> (2018).
+ [<a href="https://arxiv.org/abs/1801.00805">arxiv</a>]
+</li>
+
 <li>W. Janke, M. Marenz and J. Zierenberg,
 <pubtitle><a href=" https://link.springer.com/article/10.1134/S1995080217050171"> Generalized ensemble computer simulations for structure formation of semiflexible polymers,</a></pubtitle>
 <journal> Lobachevskii J. Math.</journal>  38,  978 (2017).
