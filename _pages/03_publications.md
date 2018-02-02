@@ -42,8 +42,8 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 
 <li>J. Gross, J. Zierenberg, M. Weigel and W. Janke,
 <pubtitle><a href=" http://www.sciencedirect.com/science/article/pii/S0010465517303697"> Massively parallel multicanonical simulations,</a></pubtitle>
-<journal> Comput. Phys. Commun.</journal> (2017).
- (in print) [<a href="https://arxiv.org/abs/1707.00919">arxiv</a>]
+<journal> Comput. Phys. Commun.</journal>  224,  387 (2018).
+ (online Nov. 2017) [<a href="https://github.com/CQT-Leipzig/cudamuca">code at github</a>] [<a href="https://arxiv.org/abs/1707.00919">arxiv</a>]
 </li>
 
 <li>K.S. Austin, J. Zierenberg and W. Janke,
