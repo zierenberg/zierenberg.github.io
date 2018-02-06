@@ -152,7 +152,7 @@ worth taking a look at.</h6>
 <listpub>
 <!-- List of proceedings start -->
 <li>W. Janke and J. Zierenberg,
-<pubtitle><a href=" "> From particle condensation to polymer aggregation,</a></pubtitle>
+<pubtitle><a href=" http://iopscience.iop.org/article/10.1088/1742-6596/955/1/012003"> From particle condensation to polymer aggregation,</a></pubtitle>
 <journal> J. Phys.: Conf. Ser.</journal>  955,  012003 (2018).
  [<a href="https://arxiv.org/abs/1801.00805">arxiv</a>]
 </li>
