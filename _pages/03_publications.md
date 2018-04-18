@@ -30,8 +30,9 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <listpub>
 <!-- List of journal publications start -->
 <li>N.G. Fytas, J. Zierenberg, P.E. Theodorakis, M. Weigel, W. Janke and A. Malakis,
-<pubtitle><a href=" https://arxiv.org/abs/1712.07703"> Universality from disorder in the random-bond Blume-Capel model,</a></pubtitle>
-<journal> arxiv</journal> (2017).
+<pubtitle><a href=" https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.040102 "> Universality from disorder in the random-bond Blume-Capel model,</a></pubtitle>
+<journal> Phys. Rev. E</journal>  97,  040102(R) (2017).
+[<a href="https://arxiv.org/abs/1712.07703">arxiv</a>]
 </li>
 
 <li>J. Zierenberg, N. Fricke, M. Marenz, F.P. Spitzner, V. Blavatska and W. Janke,
@@ -129,12 +130,12 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <journal> Condens. Matter Phys.</journal>  15,  43008 (2012).
 </li>
 
-<li>S. Schöbl, J. Zierenberg and W. Janke,
+<li> ???,
 <pubtitle><a href=" http://iopscience.iop.org/1751-8121/45/47/475002"> Influence of lattice disorder on the structure of persistent polymer chains,</a></pubtitle>
 <journal> J. Phys. A: Math. Theor.</journal>   45,  475002 (2012).
 </li>
 
-<li>S. Schöbl, J. Zierenberg and W. Janke,
+<li> ???,
 <pubtitle><a href=" http://pre.aps.org/abstract/PRE/v84/i5/e051805"> Simulating flexible polymers in a potential of randomly distributed hard disks,</a></pubtitle>
 <journal> Phys. Rev. E</journal>  84,  051805 (2011).
 </li>
@@ -171,10 +172,10 @@ worth taking a look at.</h6>
 <li>J. Zierenberg and W. Janke,
 <pubtitle><a href=" http://iopscience.iop.org/article/10.1088/1742-6596/750/1/012017"> Finite-size scaling of Lennard-Jones droplet formation at fixed density,</a></pubtitle>
 <journal> J. Phys.: Conf. Ser.</journal>  750,  012017 (2016).
- in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D.P. Landau, H.-B. Schüttler, S. Lewis, and M. Bachmann [<a href="http://arxiv.org/abs/1605.05844">arxiv</a>]
+???
 </li>
 
-<li>A. Nußbaumer, J. Zierenberg, E. Bittner and W. Janke,
+<li> ???,
 <pubtitle><a href=" http://iopscience.iop.org/article/10.1088/1742-6596/759/1/012009"> Numerical test of finite-size scaling predictions for the droplet condensation-evaporation transition,</a></pubtitle>
 <journal> J. Phys.: Conf. Ser.</journal>  759,  012009 (2016).
   [<a href="http://arxiv.org/abs/1605.05591">arXiv</a>]
@@ -183,7 +184,7 @@ worth taking a look at.</h6>
 <li>M. Mueller, J. Zierenberg, M. Marenz, P. Schierz and W. Janke,
 <pubtitle><a href=" http://www.sciencedirect.com/science/article/pii/S1875389215007257"> Probing the Effect of Density on the Aggregation Temperature of Semi-flexible Polymers in Spherical Confinement,</a></pubtitle>
 <journal> Physics Procedia</journal>  68,  95 (2015).
- in: Computer Simulation Studies in Condensed-Matter Physics XXVIII, eds. D. P. Landau, H.-B. Schüttler, S. Lewis and M. Bachmann
+???
 </li>
 
 <li>J. Zierenberg, M. Wiedenmann and W. Janke,
@@ -195,7 +196,7 @@ worth taking a look at.</h6>
 <li>J. Zierenberg, M. Marenz and W. Janke,
 <pubtitle><a href=" http://www.sciencedirect.com/science/article/pii/S1875389214000376"> Scaling properties of parallelized multicanonical simulations,</a></pubtitle>
 <journal> Physics Procedia</journal>  53,  55 (2014).
-  in: Computer Simulation Studies in Condensed-Matter Physics XXVI, eds. D.P. Landau, M. Bachmann, S.P Lewis, and H.-B. Schüttler
+???
 </li>
 
 <!-- List of proceedings end   -->
