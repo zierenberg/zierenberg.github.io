@@ -31,7 +31,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <!-- List of journal publications start -->
 <li>N.G. Fytas, J. Zierenberg, P.E. Theodorakis, M. Weigel, W. Janke and A. Malakis,
 <pubtitle><a href=" https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.040102 "> Universality from disorder in the random-bond Blume-Capel model,</a></pubtitle>
-<journal> Phys. Rev. E</journal>  97,  040102(R) (2017).
+<journal> Phys. Rev. E</journal>  97,  040102(R) (2018).
 [<a href="https://arxiv.org/abs/1712.07703">arxiv</a>]
 </li>
 
