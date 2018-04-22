@@ -1,7 +1,15 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+# -*- coding: utf8 -*-
 import numpy
 import re
+import io
 import fileinput
+
+
+#def get_string_journal_utf8(publications):
+#    print publications
+#    #todo: sort string ...
+#    return list_publications
 
 def get_string_journal(publications):
     data = numpy.genfromtxt(publications, dtype='str', delimiter=";")
@@ -62,6 +70,8 @@ def get_string_journal(publications):
 filestring=open(".auto_pages/publications.md.mask").read()
 #journal publications
 list_publications = get_string_journal("./data/publications.dat")
+#string = io.open("./data/publications.dat", mode="r", encoding="utf-8").read()
+#list_publications = get_string_journal_utf8(string)
 mark='<!-- List of journal publications start -->'
 start, end = filestring.split(mark,1)
 filestring=start+mark+list_publications+end
