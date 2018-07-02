@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img class="profile" src="../data/profile.jpg">
+<img class="profile" src="../data/2018_johannes.jpg">
 
 
 I am a theoretical physicist now in Neuroscience. Amongs others, I am
