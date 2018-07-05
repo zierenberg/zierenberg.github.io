@@ -32,7 +32,7 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 <li>J. Zierenberg, J. Wilting and V. Priesemann,
 <pubtitle><a href=" "> Homeostatic plasticity and external input shape neural network dynamics,</a></pubtitle>
 <journal> Phys. Rev. X</journal> (2018).
- in press [<a href="https://arxiv.org/abs/">arxiv</a>] [<a href="https://www.biorxiv.org/content/early/2018/07/04/362152">bioRxiv</a>]
+ in press [<a href="https://arxiv.org/abs/1807.01479">arxiv</a>] [<a href="https://www.biorxiv.org/content/early/2018/07/04/362152">bioRxiv</a>]
 </li>
 
 <li>F.P. Spitzner, J. Zierenberg and W. Janke,
