@@ -36,9 +36,9 @@ see also <a href="https://arxiv.org/a/zierenberg_j_1.html">arxiv</a><br>
 </li>
 
 <li>F.P. Spitzner, J. Zierenberg and W. Janke,
-<pubtitle><a href=" ">  The Droplet Formation-Dissolution Transition in Different Ensembles: Finite-Size Scaling from Two Perspectives,</a></pubtitle>
+<pubtitle><a href=" https://scipost.org/submissions/1807.00587v1/ ">  The Droplet Formation-Dissolution Transition in Different Ensembles: Finite-Size Scaling from Two Perspectives,</a></pubtitle>
 <journal> </journal> (2018).
-[<a href="https://arxiv.org/abs/1807.00587">arxiv</a>]
+Submitted to Scipost [<a href="https://arxiv.org/abs/1807.00587">arxiv</a>]
 </li>
 
 <li>N.G. Fytas, J. Zierenberg, P.E. Theodorakis, M. Weigel, W. Janke and A. Malakis,
