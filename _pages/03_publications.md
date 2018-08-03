@@ -137,7 +137,7 @@ Submitted to Scipost [<a href="https://arxiv.org/abs/1807.00587">arxiv</a>]
 <journal> Comput. Phys. Commun.</journal>  184,  1155 (2013).
 </li>
 
-<li>M. Marenz, J. Zierenberg,  H, a. Arkin and W. Janke,
+<li>M. Marenz, J. Zierenberg, H. Arkin and W. Janke,
 <pubtitle><a href=" http://arxiv.org/abs/1212.6144"> Simple flexible polymers in a spherical cage,</a></pubtitle>
 <journal> Condens. Matter Phys.</journal>  15,  43008 (2012).
 </li>

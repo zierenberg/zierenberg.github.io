@@ -27,7 +27,7 @@ def get_string_journal(publications):
         comments=entry[7]
         entry_formatted="\n<li>"
         #modify author list:
-        author_names=authors.split("and")
+        author_names=authors.split(" and ")
         for i in range(len(author_names)):
             first=author_names[i].split()[:-1]
             last=author_names[i].split()[-1]
