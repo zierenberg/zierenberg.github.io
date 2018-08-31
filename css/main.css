@@ -1,0 +1,152 @@
+/*todo: for xs device -> do fixed width as for md, lg, ...*/
+
+body {
+	font-size: .875rem;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.feather {
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+}
+
+.navbar {
+	z-index: 200;
+}
+
+.content {
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
+	text-align: justify;
+	order: 1;
+	padding-top: 4rem;
+}
+/*
+@media (min-width: 768px) {
+	.content {
+		display: block!important;
+		position: -webkit-sticky;
+		position: sticky;
+		padding-top: 4rem;
+	}
+}
+*/
+
+.bg-light-grad {
+    background-image: linear-gradient(to right, rgba(248,249,250,0), rgba(248,249,250,1));
+}
+
+.sidebar {
+	-webkit-box-ordinal-group: 1;
+	-ms-flex-order: 0;
+	order: 0;
+	padding-top: 4rem;
+	padding-bottom: 1rem;
+	box-shadow: inset 0 -1.5px 0 rgba(0, 0, 0, .1);
+}/* 576px does not work with font size in publications*/
+@media (max-width: 768px) {
+	.sidebar {
+    display: none;
+	}
+}
+@media (min-width: 768px) {
+	.sidebar {
+		/*display: block!important;*/
+		position: -webkit-sticky;
+		position: sticky;
+		/*position: absolute;*/
+		top: 0rem;
+		max-height: calc(100vh);
+		overflow-y: auto;
+		z-index: 100;
+		box-shadow: inset -1.5px 0 0 rgba(0, 0, 0, .1);
+	}
+}
+@media (min-width: 1200px) {
+	.sidebar {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 1 320px;
+		flex: 0 1 320px;
+	}
+}
+
+.nav-link {
+	font-weight: 500;
+	color: #333;
+}
+
+.nav-link .feather {
+	margin-left: 4px;
+	color: #999;
+}
+
+.nav-link.active {
+	color: #007bff;
+}
+
+.nav-link:hover .feather,
+.nav-link.active .feather {
+	color: inherit;
+}
+
+.sidebar-heading {
+	font-size: .75rem;
+	text-transform: uppercase;
+}
+
+.sidebar-img {
+	width: 120px;
+	height: 120px;
+}
+
+.content-img {
+	width: 100%;
+}
+@media (min-width: 576px) {
+  .content-img {
+  	width: 160px;
+  }
+}
+
+/*
+ * News
+*/
+dt {
+  margin: 0 0 0 1em;
+}
+dd {
+  font-size 0.8em;
+  margin: 0 0 1em 3em;
+}
+
+/*
+* Utilities
+*/
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+
+
+listpub > li{
+      margin: 3px 0;
+    }
+
+listpub > li > journal{
+	  font-weight: bold;
+  }
+listpub > li > pubtitle{
+	  font-style: italic;
+  }
+listpub > li > pubtitle:before{
+	  content:"\a";
+	  white-space:pre;
+  }
+listpub > li > pubtitle:after{
+	  content:"\a";
+	  white-space:pre;
+  }
