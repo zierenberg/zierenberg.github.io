@@ -142,11 +142,3 @@ listpub > li > journal{
 listpub > li > pubtitle{
 	  font-style: italic;
   }
-listpub > li > pubtitle:before{
-	  content:"\a";
-	  white-space:pre;
-  }
-listpub > li > pubtitle:after{
-	  content:"\a";
-	  white-space:pre;
-  }

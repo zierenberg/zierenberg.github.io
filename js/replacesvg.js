@@ -43,7 +43,6 @@ function replace_svg() {
 function loadcontent(name){
   $.get("content/"+name+".html", function(data){
       $("#content").replaceWith(data);
-      console.log(data)
       document.getElementById('navbar_home').classList.remove("active");
       document.getElementById('navbar_news').classList.remove("active");
       document.getElementById('navbar_pubs').classList.remove("active");
