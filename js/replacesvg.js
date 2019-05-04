@@ -47,6 +47,7 @@ function loadcontent(name){
       document.getElementById('navbar_news').classList.remove("active");
       document.getElementById('navbar_pubs').classList.remove("active");
       document.getElementById('navbar_talks').classList.remove("active");
+      document.getElementById('navbar_outreach').classList.remove("active");
       document.getElementById('navbar_'+name).classList.add("active");
   });
 }
