@@ -1,0 +1,1595 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Computation in Complex Networks</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/mpi.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- ############################################################################### -->
+        <section>
+          <div style="width:100%; min-height:1000px; max-height:1000px;">
+            <div style="padding-top:100px">
+              <h2>Computation in Complex Networks</h2>
+            </div>
+
+            <div style="padding-top:120px">
+              <b>Johannes Zierenberg</b><br><br>
+              Neural Systems Theory<br>
+              Max Planck Institute for Dynamics and Self-Organization
+            </div>
+
+            <!--
+              * start with computation (Turing, quantum (?), brain, neuromorphic)
+              * problems of brain (variability, complex network, event-driven)
+              * ...
+
+              * my work: PRX, arxiv (coalescence), prelim DMFT, prelim causal avalanches
+              
+              * future work:...
+            -->
+
+            <div style="position:absolute; bottom:0; width:100%">
+              <img src="logos/bccn.gif" height=300 style="border:0; box-shadow:none; background:none; margin-left:20px" align="left">
+              <img src="logos/Max-Planck-Gesellschaft.svg" height=300 style="border:0; box-shadow:none; background:none;margin-right:50px" align=center >
+              <img src="logos/JHS_Logo_RGB.jpg" height=300 style="border:0; box-shadow:none; background:none;margin-right:50px" align=right >
+            </div>
+          </div>
+        </section>
+
+
+<!-- ############################################################################### -->
+<!--
+          <h3>Inspiration from Nature: The Brain</h3>
+-->
+        <section style="min-height:1050px">
+          <h3>Some differences between computer and brain</h3>
+          <img src="./sources/brain_black.png" width=15%  style="border:0; box-shadow:none; position:absolute; top:17%; right:0%">
+          <img src="./sources/computer-303130_1280.png" width=15%  style="border:0; box-shadow:none; position:absolute; top:17%; left:0%">
+
+
+          <div style="position:absolute; top:17%; left:15%; width:35%;text-align:left" data-markdown class="fragment fade-in" data-fragment-index="2" >
+            <script type="text/template">
+              * Regular network of processors access separate memory <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              * Synchronous computation through clock-based updates <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+              * High energy consumption <!-- .element: class="fragment fade-in" data-fragment-index="4" -->
+            </script>
+          </div>
+          <div style="position:absolute; top:17%; right:15%; width:35%;text-align:left" data-markdown class="fragment fade-in" data-fragment-index="2" >
+            <script type="text/template">
+              * Complex network responsible for memory and processing <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              * Asynchronous computation through short electrical pulses <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+              * Low energy consumption  <!-- .element: class="fragment fade-in" data-fragment-index="4" -->
+            </script>
+          </div>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="4">
+            <img src="./sources/fortune_google_data_center_screen-shot-2015-06-24-at-11-54-41-am.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:12%; left:30%">
+            <div style="position:absolute; bottom:5%; left:25%; width:50%; text-align:center">Google data center in Oklahoma</div>
+          </span>
+          
+          <span class="fragment fade-out" data-fragment-index="4">
+            <span class="fragment fade-in" data-fragment-index="2">
+              <img src="./sources/2018_Di Ventra_Traversa_Perspective_Fig1.png" width=60%  style="border:0; box-shadow:none; position:absolute; bottom:2%; left:20%">
+            </span>
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <span></span><br>
+                <span> Di Ventra &amp;  Traversa, J. Appl. Phys. (2018)</span>
+              </small>
+            </div>
+          </span>
+
+          <div style="position:absolute; bottom:15%; right:15%; width:70%;text-align:center" data-markdown class="fragment fade-in" data-fragment-index="6" >
+            Can we understand how brain performs computation in terms of the **collective response in a complex network**?
+          </div>
+
+        </section>
+
+        <section style="min-height:1050px">
+          <h3>The brain as a complex network</h3>
+
+          <div style="position:absolute; top:12%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            <i>The brain:</i><br> 
+            Maybe the most complex "machine" that exists.<br>
+            In humans:<br>
+            $\approx$ 80 billion neurons<br>
+            $\approx$ 10 000 connections each 
+            <br>
+            <p style:"margin:100px" class="fragment fade-in" data-fragment-index="1" >
+              Genetically encoded complex structure.
+            </p>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="1">
+          <span class="fragment fade-in" data-fragment-index="0">
+            <!--<img src="./sources/brain_black.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:20%; left:30%">-->
+            <video width="48%" controls style="position:absolute; top:12%; left:51%">
+              <source src="./sources//02_mit_3D_visualization.mp4" type="video/mp4">
+            </video>
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+              <small>
+                <br>Source: MIT News
+              </small>
+            </div>
+          </span>
+          </span>
+          <span class="fragment fade-out" data-fragment-index="11">
+          <span class="fragment fade-in" data-fragment-index="1">
+            <img src="./sources/2008_Hagmann et al_Mapping the Structural Core of Human Cerebral Cortex_Fig3.png" width=50%  style="border:0; box-shadow:none; position:absolute; top:20%; left:50%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="1">Hagmann et al. PLoS Biol. (2008)</span><br>
+            </small>
+          </div>
+          </span>
+
+
+
+          <span class="fragment fade-out" data-fragment-index="20">
+          <div style="position:absolute; top:52%; left: 1%; width:48%; text-align:left" class="fragment fade-in" data-fragment-index="10" >
+            <i>Complex network:</i><br> 
+            Includes features beyond regular networks or random graphs<br>
+            <br>
+            Examples:<br>
+            Small-world networks<br>
+            hierarchical networks
+          </div>
+
+
+          <span class="fragment fade-in-then-out" data-fragment-index="11">
+            <img src="./sources/wikipedia_Small-world-network-example.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:15%; left:55%">
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <br>
+                <span>wikipedia</span><br>
+              </small>
+            </div>
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="12">
+            <img src="./sources/2013_Moretti_Muñoz_Griffiths phases and the stretching of criticality in brain networks_Fig1.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:15%; left:55%">
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <br>
+                <span>Moretti &amp; Mu&ntilde;oz, Nat. Commun. (2013)</span><br>
+              </small>
+            </div>
+          </span>
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="20"> 
+          <div style="position:absolute; top:52%; left: 1%; width:48%; text-align:left">
+            <i>Subsampling problem:</i><br> 
+            Only measure fraction of collective activity.<br>
+            Biases collective observables, e.g., correlations.
+            <br><br>
+            <span class="fragment fade-in" data-fragment-index="21">
+              <b>Central challenge:<br> Derive subsampling invariant estimates.</b>
+            </span>
+          </div>
+          <img src="./sources/viola_subsampling.png" width=40%  style="border:0; position:absolute; top: 20%; left: 55%; ">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <span class="fragment fade-in" data-fragment-index="21"> de Heuvel, Wilting, Becker, Priesemann &amp; Zierenberg, in preparation </span><br>
+              <span class="fragment fade-in" data-fragment-index="21"> Wilting &amp; Priesemann, Nat. Commun. (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="21"> Levina  &amp; Priesemann, Nat. Commun. (2017) </span><br>
+              <span class="fragment fade-in" data-fragment-index="20"> Priesemann et al., BMC Neuroscience (2009) </span><br>
+            </small>
+          </div>
+          </span>
+
+        </section>
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>What do I mean with computation?</h3>
+          
+          <div style="position:absolute; top:12%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            <i>Algorithm:</i><br> Explain how complex brain activity<br> generates complex behavior
+            <div data-markdown>
+              <script type="text/template">
+                * Working memory task <!-- .element: class="fragment fade-in" data-fragment-index="1" -->
+                * Classification <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              </script>
+            </div>
+          </div>
+          <span class="fragment fade-in-then-out" data-fragment-index="0">
+            <img src="./sources/2012_Eliasmith et al_A Large-Scale Model of the Functioning Brain_Fig1.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:15%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="./sources/2012_Eliasmith et al_A Large-Scale Model of the Functioning Brain_Fig2.png" width=32%  style="border:0; box-shadow:none; position:absolute; top:12%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="2">
+            <img src="./sources/wikipedia_cc_900px-An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:30%; left:60%">
+            <div style="position:absolute; bottom:20%; left:50%; width:50%; text-align:center">Attacking Tiger?</div>
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="3">
+            <img src="./sources/2019_Liu et al_High-level Semantic Feature Detection.png" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:30%; left:60%">
+            <div style="position:absolute; bottom:20%; left:50%; width:50%; text-align:center">Classification during<br> (autonomous) driving</div>
+          </span>
+          <span class="fragment fade-out" data-fragment-index="4">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="0"> Eliasmith et al., Science (2012)</span><br>
+            </small>
+          </div>
+          </span>
+
+          <div style="position:absolute; top:41%; left: 1%; width:50%; text-align:left" class="fragment fade-in" data-fragment-index="4">
+            <i>"Compiled" code:</i><br>
+            Compute function with trained networks (top down)
+            <div data-markdown>
+              <script type="text/template">
+                * Neural engineering framework (NEF) <!-- .element: class="fragment fade-in" data-fragment-index="5" -->
+                * FORCE training <!-- .element: class="fragment fade-in" data-fragment-index="7" -->
+              </script>
+            </div>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="7">
+          <span class="fragment fade-in" data-fragment-index="5">
+            <img src="./sources/2005_Eliasmith_A Unified Approach to Building and Controlling Spiking Attractor Networks_Fig7.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:12%; left:55%">
+          </span>
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="6">
+            <img src="./sources/jefferey_lab_mouse_and_ring-attractor.gif" width=35%  style="border:0; box-shadow:none; position:absolute; top:70%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="7">
+            <img src="./sources/2017_Nicola_Clopath_Supervised learning in spiking neural networks with FORCE training_Fig1.png" width=48%  style="border:0; box-shadow:none; position:absolute; top:30%; left:51%">
+          </span>
+          <span class="fragment fade-out" data-fragment-index="10">
+          <span class="fragment fade-in" data-fragment-index="4">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="7"> Nicola &amp; Clopath, Nat. Commun. (2017)</span><br>
+
+              <span class="fragment fade-in" data-fragment-index="7"> Sussillo &amp; Abbott, Neuron (2009)</span><br>
+              <span class="fragment fade-in" data-fragment-index="6"> Jeffery lab (online) </span><br>
+              <span class="fragment fade-in" data-fragment-index="5"> Eliasmith, Neural Comput. (2005)</span><br>
+            </small>
+          </div>
+          </span>
+          </span>
+
+          
+          <div style="position:absolute; top:65%; left: 1%; width:50%; text-align:left; border:3px; border-style:solid; border-color:#FFFFFF; padding: 0.2em;" class="fragment fade-in" data-fragment-index="10">
+            <i>Neural "machine" code:</i><br>
+            Emergent collective dynamics (bottom up)
+            <div data-markdown>
+              <script type="text/template">
+                * Representation of input <!-- .element: class="fragment fade-in" data-fragment-index="11" -->
+                * Integration through spatio-temporal correlations <!-- .element: class="fragment fade-in" data-fragment-index="12" -->
+              </script>
+            </div>
+          </div>
+          <div style="position:absolute; top:65%; left: 1%; width:50%; text-align:left; border:3px; border-style:solid; border-color:#FF0000; padding: 0.2em;" class="fragment fade-in" data-fragment-index="13">
+            <i>Language:</i><br>
+            Emergent collective dynamics (buttom up)
+            <div data-markdown>
+              <script type="text/template">
+                * Representation of input <!-- .element: class="fragment fade-in" data-fragment-index="11" -->
+                * Integration through spatio-temporal correlations <!-- .element: class="fragment fade-in" data-fragment-index="12" -->
+              </script>
+            </div>
+          </div>
+          <span class="fragment fade-in-then-out" data-fragment-index="11">
+            <img src="./sources/2011_Tchumatchenko_ Ultrafast Population Encoding by Cortical Neurons_fig2.png" width=48%  style="border:0; box-shadow:none; position:absolute; top:30%; left:51%">
+          </span>
+          <span class="fragment fade-in" data-fragment-index="12">
+            <img src="./sources/2018_Munoz_Colloquium_Fig2c.png" width=40%  style="border:0; box-shadow:none; position:absolute; top: 40%; left:55%;">
+          </span>
+          <span class="fragment fade-in" data-fragment-index="10">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="12">Mu&ntilde;oz, Rev. Mod. Phys. (2018)</span><br>
+              <span class="fragment fade-in" data-fragment-index="12">Henkel, Hinrichsen &amp; Lübeck, "Non-Equilibrium Phase Transitions" (2008)</span><br>
+              <span class="fragment fade-in" data-fragment-index="11">Tchumatchenko et al., J. Neurosci. (2011)</span><br>
+            </small>
+          </div>
+          </span>
+        </section>
+
+
+<!-- ############################################################################### -->
+<!--here reservoir computing-->
+        <section style="min-height:1050px">
+          <h3>Computation: Spatio-temporal correlations</h3>
+          <div style="position:absolute; top:12%; left: 1%; width:50%; text-align:left;" class="fragment fade-in" data-fragment-index="1">
+            <i>Statistical Physics:</i><br>
+            Spatio-temporal correlations expected at<br> (non-equilibrium) phase transitions.
+          </div>
+          <span class="fragment fade-out" data-fragment-index="3">
+          <span class="fragment fade-in" data-fragment-index="1">
+            <img src="./sources/2018_Munoz_Colloquium_Fig2.png" width=26%  style="border:0; box-shadow:none; position:absolute; top:10%; left:65%">
+          </span>
+          </span>
+          
+          <div style="position:absolute; top:32%; left: 1%; width:60%; text-align:left;" class="fragment fade-in" data-fragment-index="2">
+            <i>Criticality hypothesis:</i><br>
+            Neural networks self-organize close to critical point for computational benefits. 
+            <div data-markdown>
+            <script type="text/template">
+              * Scale-free distribution of neuronal avalanches (topology) <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+              * Diverging autocorrelation time (temporal integration)<!-- .element: class="fragment fade-in" data-fragment-index="5" -->
+              * Maximal information theoretic measures <!-- .element: class="fragment fade-in" data-fragment-index="6" -->
+            </script>
+            </div>
+          </div>
+          <span class="fragment fade-in-then-out" data-fragment-index="2">
+            <img src="./sources/2018_Munoz_Colloquium_Fig3.png" width=26%  style="border:0; box-shadow:none; position:absolute; top:37%; left:65%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="3">
+            <img src="./sources/2003_Beggs_Plenz_Neuronal Avalanches in Neocortical Circuits_Fig1-2.png" width=21%  style="border:0; box-shadow:none; position:absolute; bottom:2%; left:70%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="4">
+            <img src="./sources/2018_davidsen_41598_2018_21730_Fig3_HTML.jpg" width=60%  style="border:0; box-shadow:none; position:absolute; bottom:40%; left:70%; clip-path:inset(0 66.5% 0% 0);">
+            <img src="./sources/2018_davidsen_41598_2018_21730_Fig4_HTML.jpg" width=60%  style="border:0; box-shadow:none; position:absolute; bottom: 2%; left:70%; clip-path:inset(0 66.5% 0% 0);">
+            <p style="border:0; box-shadow:none; position:absolute; bottom:72%; left:73%">control</p>
+            <p style="border:0; box-shadow:none; position:absolute; bottom:34%; left:73%">increased syn. density</p>
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="5">
+            <img src="./sources/2018_Wilting_et_al_Operating_in_a_Reverberating_Regime_Enables_Rapid_Tuning_of_Network_States_to_Fig2.png" width=25%  style="border:0; box-shadow:none; position:absolute; bottom:5%; left:65%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="6">
+            <img src="./sources/2012_Boedecker_et_al_Information_processing_in_echo_state_networks_at_the_edge_of_chaos_part.png" width=35%  style="border:0; box-shadow:none; position:absolute; bottom:5%; left:60%">
+          </span>
+          
+          <span class="fragment fade-out" data-fragment-index="10">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="6">Boedecker et al., Theory Biosci. (2012) </span><br>
+              <span class="fragment fade-in" data-fragment-index="5">Wilting et al., Front. Syst. Neurosci. (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="4">Yaghoubi et al., Sci. Rep. (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="3">Beggs &amp; Plenz, J. Neurosci. (2003)</span><br>
+              <span class="fragment fade-in" data-fragment-index="2">Bak, Tang, &amp; Wiesenfeld, Phys. Rev. Lett. (1987)</span><br>
+              <span class="fragment fade-in" data-fragment-index="1">Mu&ntilde;oz, Rev. Mod. Phys. (2018)</span><br>
+            </small>
+          </div>
+          </span>
+
+          <span  class="fragment fade-in" data-fragment-index="10">
+          <div style="position:absolute; top:66%; left: 1%; width:60%; text-align:left;">
+            <i>Reservoir computing:</i><br>
+            Neural trajectory of random network close to criticality encodes information about past.
+          </div>
+          <span class="fragment fade-in" data-fragment-index="11">
+            <img src="./sources/echo_state.png"      width=35%  style="border:0; box-shadow:none; position:absolute; top:10%; left:60%;">
+            <img src="./new/echo_state_property.png" width=25%  style="border:0; box-shadow:none; position:absolute; top:52%; left:65%">
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="10"> Jaeger, Technical Report (2001); Maass, Natschläger, &amp; Markram, Neural Comput. (2002); Jaeger &amp; Haas, Science (2004) </span><br>
+            </small>
+          </div>
+          </span>
+          </span>
+
+          <div style="position:absolute; bottom:5%; left:  5%; width:90%; text-align:center" class="fragment fade-in" data-fragment-index="14">
+            <b>Central challenge:<br> Understand relation network structure $\leftrightarrow$ collective dynamics</b>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+<!--here dynamic range problem with literature solutions s.t. central challenge: how do neural populations encode stimulus statistics? -->
+        <section style="min-height:1050px">
+          <h3>Computation: Representation of input by collective response</h3>
+
+          <div style="position:absolute; top:10%; left: 1%; width:54%; text-align:left;" class="fragment fade-in" data-fragment-index="0">
+            Encoding stimulus intensity by population rate.<br>
+            <div data-markdown>
+            <script type="text/template">
+              * motion discrimination in monkey visual cortex <!-- .element: class="fragment fade-in" data-fragment-index="1" -->
+              * odor discrimination in mouse olfactory bulb glomeruli <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              * sound level discrimination in auditory midbrain of guinea pig <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+            </script>
+            </div>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="10">
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="./results_tailored/1992_britten_j-neurosci_response-curve.png" width=30%  style="border:0; box-shadow:none; position:absolute; top:20%; left:60%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="2">
+            <img src="./results_tailored/2001_wachowiak_neuron_fig6f.png" width=35%  style="border:0; box-shadow:none; position:absolute; top:20%; left:60%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="3">
+            <img src="./sources/2005_Dean_et_al_Neural_population_coding_of_sound_level_adapts_to_stimulus_statistics_Fig3c.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:20%; left:55%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="3">Dean et al., Nat. Neurosci. (2005)</span><br>
+              <span class="fragment fade-in" data-fragment-index="2">Wachowiak &amp; Cohen, Neuron (2001)</span><br>
+              <span class="fragment fade-in" data-fragment-index="1">Britten et al., J. Neurosci. (1992)</span><br>
+            </small>
+          </div>
+          </span>
+
+          <div style="position:absolute; top:45%; left: 1%; width:54%; text-align:left;" class="fragment fade-in" data-fragment-index="10">
+            However, perception range is much larger!
+            <br>
+            <span class="fragment fade-in" data-fragment-index="15">
+            Human hearing range (dynamic range) $\approx 100\text{dB}$
+            </span>
+            <br>
+            <span class="fragment fade-in" data-fragment-index="17">
+              <b>Dynamic range problem</b>
+            </span>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="20">
+          <span class="fragment fade-in-then-out" data-fragment-index="10">
+            <img src="./results_tailored/fig_response_sketch_0.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:3%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="11">
+            <img src="./results_tailored/fig_response_sketch_1.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:3%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="12">
+            <img src="./results_tailored/fig_response_sketch_2.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:3%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="13">
+            <img src="./results_tailored/fig_response_sketch_3.png" width=40%  style="border:0; box-shadow:none; position:absolute; bottom:3%; left:55%">
+          </span>
+          <span class="fragment fade-in" data-fragment-index="14">
+            <img src="./results_tailored/fig_response_sketch.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:3%; left:55%">
+          </span>
+            <span class="fragment fade-in" data-fragment-index="11">
+              <img src="./sources/img_response_sketch_forest.png" width=7%  style="border:0; box-shadow:none; position:absolute; bottom:19%; left:65%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="12">
+              <img src="./sources/img_response_sketch_takeoff.png" width=13%  style="border:0; box-shadow:none; position:absolute; bottom:28%; left:82%">
+            </span>
+          <span class="fragment fade-in" data-fragment-index="16">
+            <img src="./sources/2005_Dean_et_al_Neural_population_coding_of_sound_level_adapts_to_stimulus_statistics_Fig3c.png" width=28%  style="border:0; box-shadow:none; position:absolute; top:10%; left:55%">
+          </span>
+          </span>
+
+          <div style="position:absolute; top:65%; left: 1%; width:54%; text-align:left;" class="fragment fade-in" data-fragment-index="20">
+            Suggested solutions to dynamic range problem: 
+            <div data-markdown>
+            <script type="text/template">
+              * Maximal dynamic range at criticality <!-- .element: class="fragment fade-in" data-fragment-index="21" -->
+              * Adaptation of neuron response to stimulus statistics <!-- .element: class="fragment fade-in" data-fragment-index="22" -->
+            </script>
+            </div>
+          </div>
+
+          <span class="fragment fade-out" data-fragment-index="30">
+          <span class="fragment fade-in-then-out" data-fragment-index="21">
+              <img src="./results_tailored/2006_kinouchi_dyn-range.png"     width=40%  style="border:0; box-shadow:none; position:absolute; bottom:20%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="22">
+              <img src="./sources/2005_Dean_et_al_Neural_population_coding_of_sound_level_adapts_to_stimulus_statistics_Fig4_custom.png"     width=40%  style="border:0; box-shadow:none; position:absolute; bottom:20%; left:55%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="22">Dean et al., Nat. Neurosci. (2005)</span><br>
+              <span class="fragment fade-in" data-fragment-index="21">Kinouchi &amp; Copelli, Nat. Phys. (2006)</span><br>
+            </small>
+          </div>
+          </span>
+
+          
+          <div style="position:absolute; bottom:5%; left:  5%; width:90%; text-align:center" class="fragment fade-in" data-fragment-index="30">
+            <b>Central challenge:<br> Efficient representation of input as collective response in complex networks</b>
+          </div>
+
+        </section>
+
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Computation in complex networks</h3>
+          <img src="./research_major_challenge.png" width=70%  style="border:0; box-shadow:none; position:absolute; top: 5%; left:15%;clip-path:inset(10% 0 0 0 );">
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Inferring autocorrelation time of subsampled systems with non-stationary external input </h3>
+          <div style="position:absolute; top:18%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            Observation: Neuroscience experiments assume consistent responses across trials. 
+          </div>
+          <div style="position:absolute; top:25%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="2" >
+            Assumption: Internal spreading dynamics are stable, but external input changes reliably. 
+          </div>
+          <span class="fragment fade-out" data-fragment-index="4">
+          <span class="fragment fade-in" data-fragment-index="1">
+            <img src="./sources/2009_pipa_Fig2.jpg" width=70%  style="border:0; box-shadow:none;position:absolute; top:35%;left:15%">
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <span>Pipa et al., Front. Integr. Neurosci. (2009)</span>
+              </small>
+            </div>
+          </span>
+          </span>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="4">
+            <img src="./results_jorge/BP_four_regimes_figure_gridplot.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="10">
+            <div style="position:absolute; top:35%; left: 2%; width:96%;text-align:left">
+              Tests: 
+            </div>
+            <img src="./results_jorge/Deviation_Matrix_Paper.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="20">
+            <div style="position:absolute; top:35%; left: 2%; width:96%;text-align:left">
+              Application: 
+            </div>
+            <img src="./results_jorge/Paper_Experimental_Results_new.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:30%;left:15%">
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="30">
+          <div style="position:absolute; bottom:35%; right: 2%; width:95%;text-align:center; background-color:white;  border:3px; border-style:solid; border-color:#fc8d62c8; padding: 0.2em;">
+            <b>
+              When inferring autocorrelation time from subsampled data, <br>
+              take mean-corrected timeseries to compensate for cyclostationary
+              external input.
+            </b>
+          </div>
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="4">Wilting &amp; Priesemann, Nat. Commun. (2018)</span><br>
+              <span>de Heuvel, Wilting, Becker, Priesemann &amp; Zierenberg, in preparation </span><br>
+            </small>
+          </div>
+          <div style="position:absolute; bottom:1%; right:6.0%; width=49%; text-align:left">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="20"> “SurvStat@RKI 2.0,” https://survstat.rki.de/</span><br>
+              <span class="fragment fade-in" data-fragment-index="20">Pipa et al., Front. Integr. Neurosci. (2009)</span><br>
+            </small>
+          </div>
+
+        </section>
+
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Computation in complex networks</h3>
+          <img src="./research_major_challenge.png" width=70%  style="border:0; box-shadow:none; position:absolute; top: 5%; left:15%;clip-path:inset(10% 0 0 0 );">
+        </section>
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Ensemble of neural networks optimizes sensitivity to stimulus statistics</h3>
+
+          <div style="position:absolute; top:11%; left: 2%; width:10%;text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            Observation: 
+          </div>
+          <div style="position:absolute; top:11%; left:16%; width:60%;text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            We perceive a broad distribution of stimulus intensities
+          </div>
+          <div style="position:absolute; top:16%; left:16%; width:60%;text-align:left" class="fragment fade-in" data-fragment-index="1" >
+            but single-neuron response is comparably narrow
+          </div>
+
+          <span class="fragment fade-in-then-out" data-fragment-index="0">
+            <img src="./results_tailored/fig_response_sketch.png"   width=65%  style="border:0; box-shadow:none; position:absolute; bottom:1%; left:15%">
+            <img src="./sources/img_response_sketch_forest.png" width=15%  style="border:0; box-shadow:none; position:absolute; bottom:25%; left:25%">
+            <img src="./sources/img_response_sketch_takeoff.png" width=25%  style="border:0; box-shadow:none; position:absolute; bottom:38%; left:60%">
+          </span>
+
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="./sources/2005_Dean_et_al_Neural_population_coding_of_sound_level_adapts_to_stimulus_statistics_Fig3c.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:15%; left:25%">
+          </span>
+
+          <span class="fragment fade-out" data-fragment-index="10">
+          <div style="position:absolute; top:24%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="2" >
+            Proposed Solution: Maximal dynamic range at non-equilibrium phase transition 
+          </div>
+          <div style="position:absolute; top:32%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="5" >
+            Problem: Constraint discriminable interval
+          </div>
+          <span class="fragment fade-out" data-fragment-index="5" >
+            <span class="fragment fade-in" data-fragment-index="2" > 
+              <img src="./results_tailored/2006_kinouchi_dyn-range.png"     width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:2%">
+              <p style="border:0; box-shadow:none; position:absolute; bottom: 9%; left:23.5%; background-color:white">$m$</p>
+            </span>
+          </span>
+          <span class="fragment fade-out"  data-fragment-index="4">
+          <div style="position:absolute; width:55%; left:45%; top:40%;text-align:left;height:40%" class="fragment fade-in"  data-fragment-index="3">
+          Model: Branching network
+            <img src="./results/new_model_base_feeback.png" width=50%  style="border:0; box-shadow:none; position:absolute; top:10%; left:-5%">
+            <div style="position:absolute; width:55%; left:45%; top:20%;text-align:left;">
+              <ul>
+                <li > time step $\Delta t$</li>
+                <li > external excitation:<br> rate $h$</li>
+                <li > internal excitation:<br> connectivity matrix $w_{ij}=\frac{m}{K_j^\mathrm{out}}$</li>
+              </ul>
+            </div>
+          </div>
+          </span>
+          <img src="./results_tailored/fig_short_response_ER.png"       width=40%  style="border:0; box-shadow:none; position:absolute; bottom: 7%; left:52%" class="fragment fade-in" data-fragment-index="4" >
+          <img src="./results_tailored/fig_dynamic-range_bounds_1.png"  width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:2%" class="fragment fade-in" data-fragment-index="5" >
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="10">
+            <div style="position:absolute; top:24%; left: 2%; width:96%;text-align:left" >
+            Alternative:
+            </div>
+              <!--<img src="./results_tailored/2005_dean_nat-neuro_fig1d.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:15%; left:25%">-->
+            <img src="./sources/2005_Dean_et_al_Neural_population_coding_of_sound_level_adapts_to_stimulus_statistics_Fig4c.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:15%; left:25%">
+            <div style="position:absolute; top:40%; left: 70%; width:25%;text-align:left" class="fragment fade-in" data-fragment-index="11" >
+              But how can this be implemented on the network level?
+            </div>
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="2"> Kinouchi &amp; Copelli, Nat. Phys. (2006)</span><br>
+              <span class="fragment fade-in" data-fragment-index="1"> Dean et al., Nat. Neurosci. (2005)</span><br>
+              <span> Zierenberg, Wilting, Priesemann, &amp; Levina, arXiv (2019) </span>
+            </small>
+          </div>
+        </section>
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Ensemble of neural networks optimizes sensitivity to stimulus statistics</h3>
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Observation: Spreading in network can be subject to coalescence
+          </div>
+          <img src="./results_tailored/illustration_coalescence.png" width=70%  style="border:0; box-shadow:none; position:absolute; bottom:52%; left:13%" class="fragment fade-in" data-fragment-index="1" >
+          <span class="fragment fade-out" data-fragment-index="4"> 
+            <img src="./results_tailored/fig_short_response_ER.png"         width=32%  style="border:0; box-shadow:none; position:absolute; bottom:5%; left: 3%" class="fragment fade-in" data-fragment-index="2" >
+            <img src="./results_tailored/fig_short_response_pif_linear.png" width=32%  style="border:0; box-shadow:none; position:absolute; bottom:5%; left:63%" class="fragment fade-in" data-fragment-index="3" >
+            <span  class="fragment fade-in" data-fragment-index="3"> 
+              <p style="position:absolute; bottom:27%; left: 37%; width:20%;text-align:center">
+                compensating coalescence
+              </p>
+              <svg height=5% width=20% style="position:absolute; bottom:25%; left:37%">
+                <defs>
+                  <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+                  <path d="M0,0 L0,6 L9,3 z" fill="#000" />
+                </marker>
+                </defs>
+                <line x1="0" y1="50%" x2="90%" y2="50%" style="stroke:rgb(0,0,0); stroke-width:4" marker-end="url(#arrow)">
+              </svg>
+              <p style="position:absolute; bottom:15%; left: 37%; width:20%;text-align:center">
+                e.g. by probabilistic integrate-and-fire
+              </p>
+            </span>
+          </span>
+          <img src="./results_tailored/fig_long_dynamic-range_bounds.png"         width=40%  style="border:0; box-shadow:none; position:absolute; bottom:5%; left:25%" class="fragment fade-in" data-fragment-index="4" >
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="1"> </span><br>
+              <span> Zierenberg, Wilting, Priesemann, &amp; Levina, arXiv (2019) </span>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Ensemble of neural networks optimizes sensitivity to stimulus statistics</h3>
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Potential: Optimal response from tailored ensemble of coalescence-compensating networks
+          </div>
+          <img src="./results_tailored/modular_parallel.png"  width=30%  style="border:0; box-shadow:none; position:absolute; bottom:15%; left:2%" class="fragment fade-in" data-fragment-index="1" >
+          <img src="./results_tailored/fig_short_echo_combined.png"     width=50%  style="border:0; box-shadow:none; position:absolute; bottom:17%; left:45%" class="fragment fade-in" data-fragment-index="2" >
+
+          <span class="fragment fade-in" data-fragment-index="10">
+          <div style="position:absolute; bottom:5%; right: 2%; width:95%;text-align:center; background-color:white;  border:3px; border-style:solid; border-color:#fc8d62c8; padding: 0.2em;">
+            <b>
+              Optimal rate encoding of stimulus intensity with parallel modules.
+            </b>
+          </div>
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="1"> </span><br>
+              <span> Zierenberg, Wilting, Priesemann, &amp; Levina, arXiv (2019) </span>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Computation in complex networks</h3>
+          <img src="./research_major_challenge.png" width=70%  style="border:0; box-shadow:none; position:absolute; top: 5%; left:15%;clip-path:inset(10% 0 0 0 );">
+        </section>
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Emergent temporal correlations in self-regulated networks</h3>
+
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left" class="fragment fade-in" data-fragment-index="1" >
+            Observation: Collective dynamics are different between the living brain and cell cultures in the lab
+          </div>
+          <img src="./results/fig_activity_experiment.svg" width=37%  style="border:0; position:absolute; top:28%;left:60%; clip-path:inset(0% 0% 0% 0%);"  class="fragment fade-in" data-fragment-index="4">
+          <div style="border:0; position:absolute; width:40%; height:30%; top:28%;left: 5%;text-align:left"  class="fragment fade-in"  data-fragment-index="2" >
+            <p>
+              <b>brain:</b><br>
+              fluctuating<br>
+              <span class="fragment fade-in" data-fragment-index="8">more input</span>
+            </p>
+            <video width=55% controls style="position:absolute; bottom:35%;left:52%">
+              <source src="./sources/02_mit_3D_visualization.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div style="border:0; position:absolute; width:40%; height:30%; top:55%;left: 5%;text-align:left"  class="fragment fade-in"  data-fragment-index="3" >
+            <p>
+              <b>cultures:</b><br>
+              bursty<br>
+              <span class="fragment fade-in" data-fragment-index="7">low input</span>
+            </p>
+            <video width=100% controls style="position:absolute; bottom:20%;left:32%">
+              <source src="./sources/01_manuel_culture_calcium-imaging_20x_new-render.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div style="border:0; position:absolute; width:100%;bottom:10%;left:0%;text-align:center" class="fragment fade-in" data-fragment-index="5">
+            <p>Can we explain the difference between culture and brain by a simple theory? <span class="fragment fade-in" data-fragment-index="6"> - Yes!</span></p>
+          </div>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="3">Manuel Schottdorf, MPIDS</span><br>
+              <span class="fragment fade-in" data-fragment-index="2">MIT News</span><br>
+              Zierenberg, Wilting &amp; Priesemann,Phys. Rev. X (2018)<br>
+            </small>
+          </div>
+        </section>
+        
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Emergent temporal correlations in self-regulated networks</h3>
+
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Model: Branching network with homeostatic self-regulation
+          </div>
+          <span class="fragment fade-in"  data-fragment-index="1">
+            <span class="fragment fade-out"  data-fragment-index="3">
+              <img src="./results/new_model_base_feeback.png" height=50%  style="border:0; box-shadow:none; position:absolute; top:17%;left: 5%">
+            </span>
+            <span class="fragment fade-in"  data-fragment-index="3">
+              <img src="./results/new_model_base_hp.png" height=50%  style="border:0; box-shadow:none; position:absolute; top:17%;left: 5%">
+            </span>
+          </span>
+          <div style="position:absolute; width:45%; left:50%; top:22%;text-align:left;">
+            <ul>
+              <li class="fragment fade-in"  data-fragment-index="1"> time step $\Delta t$</li>
+              <li class="fragment fade-in"  data-fragment-index="1"> external excitation: rate $h$</li>
+              <li class="fragment fade-in"  data-fragment-index="1"> internal excitation: connectivity matrix $w_{ij}$</li>
+              <li class="fragment fade-in"  data-fragment-index="1"> spiking neuron excites on average $m=f(w_{ij})$ further neurons</li>
+              <li class="fragment fade-in"  data-fragment-index="1"> key parameters:<ul><li>$h$ strength of external input</li><li>$m$ strength of internal activation</li></ul></li>
+            </ul>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="5">
+          <span class="fragment fade-in" data-fragment-index="2">
+            <img src="./sources//homplast_marder_scholarpedia_Synaptic-homeo-colour.png" width=42%  style="border:0; position:absolute; top:17%;left:50%">
+          </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="3">
+            <p style="border:0; box-shadow:none;position:absolute; top:66%;left:13%">post-synaptic weight $\alpha_j$</p>
+          </span>
+          <div style="position:absolute; width:96%; left:2%; top:77%;text-align:left;" class="fragment fade-in" data-fragment-index="4">
+            We treat homeostasis as a generic negative feedback with target rate $r^\ast$ and timescale $\tau_\mathrm{hp}$:
+            <p style="text-align:center">$\Delta\alpha_j = (\Delta t~r^\ast - a_j)\frac{\Delta t}{\tau_\mathrm{hp}} \qquad\text{with}\qquad \alpha_j\geq0$</p>
+          </div>
+
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="2">Williams, O’Leary, Marder, Scholarpedia (2013)</span><br>
+              <span class="fragment fade-in" data-fragment-index="0"> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span>
+            </small>
+          </div>
+        </section>
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Emergent temporal correlations in self-regulated networks</h3>
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Numerical results: 
+          </div>
+          <span class="fragment fade-in-then-out" data-fragment-index="0">
+            <img src="./results/fig_activity_simulation_mf.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:15%;left:15%;clip-path:inset(0 0 81% 0)">
+          </span>
+          <!-- include model videos here -->
+          <span  class="fragment fade-in-then-out" data-fragment-index="0">
+            <video height="65%" controls style="position:absolute; bottom:10%; left:15%">
+              <source src="./results/web_visualization_metric_N010000_h1.00e-05_L05.00mm_seed1000.mp4" type="video/mp4">
+            </video>
+          </span>
+          <span  class="fragment fade-in-then-out" data-fragment-index="0">
+            <video height="65%" controls style="position:absolute; bottom:10%; left:50%">
+              <source src="./results/web_visualization_metric_N010000_h1.00e-04_L05.00mm_seed1000.mp4" type="video/mp4">
+            </video>
+          </span>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="./results/fig_activity_simulation_mf.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:15%;left:15%;">
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="10">
+            <img src="./results/fig_activity_simulation_mf.png" width=40%  style="transform:rotate(-90deg);border:0; box-shadow:none;position:absolute; top:40%;left:-7%;">
+          </span>
+          <span class="fragment fade-in" data-fragment-index="11">
+            <span class="fragment fade-out" data-fragment-index="13"> 
+              <img src="./results/fig_activity_experiment.svg" width=37%  style="border:0; position:absolute; bottom:10%;left:50%; clip-path:inset(50% 0% 0% 0%);">
+            </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="13">
+            <img src="./results/fig_activity_experiment.svg" width=37%  style="border:0; position:absolute; bottom:10%;left:50%; clip-path:inset(0% 0% 0% 0%);">
+          </span>
+          <div style="border:0; position:absolute; width:20%;bottom:42%;left:30%;text-align:left">
+            <p class="fragment fade-in" data-fragment-index="13">
+              <b>brain:</b><br>
+              fluctuating<br>
+              <span class="fragment fade-in" data-fragment-index="14">more input</span>
+            </p>
+          </div>
+          <div style="border:0; position:absolute; width:20%;bottom:17%;left:30%;text-align:left">
+            <p class="fragment fade-in" data-fragment-index="11">
+              <b>cultures:</b><br>
+              bursty<br>
+              <span class="fragment fade-in" data-fragment-index="12">low input</span>
+            </p>
+          </div>
+          <div style="border:0; position:absolute; width:60%;bottom:65%;left:30%;text-align:center" class="fragment fade-in" data-fragment-index="15">
+            <p> Increasing the external input strength tunes
+            collective dynamics from bursting to fluctuating</p>
+          </div>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span>  </span><br>
+              <span> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Emergent temporal correlations in self-regulated networks</h3>
+
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Mean-field theory: 
+          </div>
+
+
+          <span class="fragment fade-out" data-fragment-index="10">
+            <span class="fragment fade-in"  data-fragment-index="1">
+              <span class="fragment fade-out"  data-fragment-index="2">
+                <img src="./results/new_model_base_feeback.png" width=30%  style="border:0; box-shadow:none; position:absolute; top:17%;left:10%">
+              </span>
+              <span class="fragment fade-out"  data-fragment-index="4">
+              <span class="fragment fade-in"  data-fragment-index="2">
+                <img src="./results/new_model_base_feeback_total.png" width=30%  style="border:0; box-shadow:none; position:absolute; top:17%;left:10%">
+              </span>
+              </span>
+              <span class="fragment fade-in"  data-fragment-index="4">
+                <img src="./results/new_model_base_feeback_total_hp.png" width=30%  style="border:0; box-shadow:none; position:absolute; top:17%;left:10%">
+              </span>
+            </span>
+            <div style="position:absolute; width:45%; left:50%; top:22%;text-align:left;">
+              <ul>
+                <li   class="fragment fade-in"  data-fragment-index="1">
+                  stationary activity in a branching process<br>
+                  <p class="fragment fade-in"  data-fragment-index="2">$\mathbb{E}(A_{t+1}|A_t) = m A_t + Nh\Delta t \hspace{3em}$ </p>
+                  <p class="fragment fade-in"  data-fragment-index="3">with $\overline{a} = \frac{A}{N} = \frac{h \Delta t}{1-m}$</p>
+                </li>
+                <li class="fragment fade-in"  data-fragment-index="4">
+                  homeostatic regulation<br>
+                  <p class="fragment fade-in"  data-fragment-index="5">with $\overline{a} \to \Delta t~r^\ast$</p>
+                </li>
+            
+              </ul>
+            </div>
+
+
+            <div style="position:absolute; width:96%; left:2%; top:65%;text-align:left;" class="fragment fade-in" data-fragment-index="6">
+              Equating both results, we obtain for the branching parameter
+              <p style="text-align:center">$m = 1-h/r^\ast$</p>
+            </div>
+            <div style="position:absolute; width:96%; left:2%; top:80%;text-align:left;" class="fragment fade-in" data-fragment-index="7">
+              The branching parameter is directly related to an exponential autocorrelation time
+              <p style="text-align:center">$\tau = -\Delta t/\ln(m) = -\Delta t/\ln(1-h/r^\ast)$</p>
+            </div>
+          </span>
+
+
+          <span class="fragment fade-in" data-fragment-index="10">
+            <div style="border:0;text-align:center;position:absolute; top:12%; left: 30%; width:40%;" class="fragment fade-in" data-fragment-index="10"> 
+              exponential autocorrelation time
+              <p>$\tau = -\Delta t/\ln(1-h/r^\ast)$</p>
+            </div>
+            <span class="fragment fade-in-then-out" data-fragment-index="10">
+              <img src="./results/fig_ER_tau_empty.png" width=50%  style="border:0; box-shadow:none;position:absolute; top:25%;left:25%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="11">
+              <img src="./results/fig_ER_tau_data3.png" width=50%  style="border:0; box-shadow:none;position:absolute; top:25%;left:25%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="13">
+              <img src="./results/fig_ER_tau.png" width=50%  style="border:0; box-shadow:none;position:absolute; top:25%;left:25%">
+            </span>
+            <div style="position:absolute; width:25%; left:75%; top:30%;text-align:center;" class="fragment fade-in" data-fragment-index="12">
+              <p>Competition of time scales:<br><br> dynamic process $\tau$<br><br> vs<br><br> network homeostasis $\tau^\prime=\tau_\mathrm{hp}/\bar{k}$</p>
+            </div>
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span>  </span><br>
+              <span> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Emergent temporal correlations in self-regulated networks</h3>
+
+          <div style="position:absolute; top:12%; right: 2%; width:95%;text-align:left">
+            Next steps: 
+          </div>
+
+            <div style="border:0;text-align:center;position:absolute; top:20%; left: 2%; width:30%;"> 
+              Spreading model:
+              <p>$\tau = -\Delta t/\ln(m)$</p>
+            </div>
+            <img src="./results/fig_ER_tau.png" width=30%  style="border:0; box-shadow:none;position:absolute; top:35%;left:2%">
+          
+          <span class="fragment fade-in" data-fragment-index="2">
+            <div style="border:0;text-align:center;position:absolute; top:20%; left:35%; width:30%;"> 
+              Leaky integrate-and-fire:
+              <p>$\tau = f(J)$</p>
+            </div>
+           <img src="./sources/2017_Mastrogiuseppe_Ostojic_Intrinsically-generated fluctuating activity in excitatory-inhibitory networks_lif_c.png" width=30%  style="border:0; box-shadow:none;position:absolute; top:35%;left:35%">
+          </span>
+          
+          <span class="fragment fade-in" data-fragment-index="3">
+            <div style="border:0;text-align:center;position:absolute; top:20%; left:68%; width:30%;"> 
+              Experiment:<br>
+              optogenetic stimulation of cultures
+            </div>
+           <img src="./results_homplast/experimental_setup_manuel-andreas.png" width=20%  style="border:0; box-shadow:none;position:absolute; top:35%;left:73%">
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="10">
+          <div style="position:absolute; bottom:15%; right: 2%; width:95%;text-align:center; background-color:white;  border:3px; border-style:solid; border-color:#fc8d62c8; padding: 0.2em;">
+            <b>
+              Temporal correlation can be controlled in homeostatic networks via external input.
+            </b>
+          </div>
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="3" style="color:#fc8d62c8"> Collaboration with Neef (Göttingen, Germany) and Schottdorf (Princeton, USA)</span><br>
+              <span class="fragment fade-in" data-fragment-index="2" style="color:#fc8d62c8"> Collaboration with Brunel and Sanzeni (Duke, USA) funded by JHS</span><br>
+              <span class="fragment fade-in" data-fragment-index="2"> Mastrogiuseppe &amp; Ostojic, PLoS Comput. Biol. (2017)</span><br>
+              <span> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span>
+            </small>
+          </div>
+        </section>
+        
+
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Computation in complex networks</h3>
+          <img src="./research_major_challenge.png" width=70%  style="border:0; box-shadow:none; position:absolute; top: 5%; left:15%;clip-path:inset(10% 0 0 0 );">
+        </section>
+
+
+        
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Past work that I did not have time to talk about</h3>
+          <div style="position:absolute; top:12%; left:2%; width:45%;text-align:left" class="fragment fade-in" data-fragment-index="0">
+            <i>High-performance computation with parallel multicanonical Monte Carlo simulations</i>
+
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="1" >Supercomputers (MPI)</li>
+              <li class="fragment fade-in" data-fragment-index="2" >Graphic cards (cuda)</li>
+            </ul>
+          </div>
+
+          <span class="fragment fade-in-then-out" data-fragment-index="0">
+            <img src="./results_past/mucaScheme2.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:2%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="./results_past/pmuca_scheme.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:2%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="2">
+            <img src="./results_past/fig_soft_median_speedup_strong.png"   width=35%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:2%">
+          </span>
+          
+          <div style="position:absolute; bottom:1%; left:2.0%; width=48%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="2"> Gross, Zierenberg, Weigel, &amp; Janke, Comput. Phys. Commun. (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="1"> Zierenberg, Marenz, &amp; Janke, Comput. Phys. Commun. (2013) </span>
+            </small>
+          </div>
+
+          <div style="position:absolute; top:45%; left:2%; width:45%;text-align:left" class="fragment fade-in" data-fragment-index="10">
+            <i>Equilibrium phase transitions and<br> critical phenomena</i>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="11" > Aggregation of semiflexible polymers</li>
+              <li class="fragment fade-in" data-fragment-index="12" > Free-energy barrier of cluster formation in supercooled solutions</li>
+              <li class="fragment fade-in" data-fragment-index="13" > Universality class in disordered<br> Blume-Capel model</li>
+            </ul>
+          </div>
+
+          <span class="fragment fade-in-then-out" data-fragment-index="11">
+            <img src="./results_past/fig_complete_N013_M008.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:52%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="12">
+            <img src="./results_past/fig_1a.png"   width=40%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:52%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="13">
+            <img src="./results_past/fig_phase-diagram.png"   width=35%  style="border:0; box-shadow:none; position:absolute; bottom:50%; left:52%">
+            <img src="./results_past/fig_muca_probabilityDistribution_sw.png"   width=35%  style="border:0; box-shadow:none; position:absolute; bottom:10%; left:53%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:52.0%; width=48%; text-align:left" >
+            <small>
+              <span>  </span><br>
+              <span class="fragment fade-in" data-fragment-index="13"> Fytas et al., Phys. Rev. E (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="12"> Zierenberg, Schierz, &amp; Janke, Nat. Commun. (2017) </span><br>
+              <span class="fragment fade-in" data-fragment-index="11"> Zierenberg &amp; Janke, Europhy. Lett (2015) </span>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Computation in complex networks</h3>
+          <img src="./research_major_challenge.png" width=70%  style="border:0; box-shadow:none; position:absolute; top: 5%; left:15%;clip-path:inset(10% 0 0 0 );">
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>My long-term research goal</h3>
+          <span >
+            <img src="./research_plan_graphical_sketch.png" width=70%  style="border:0; box-shadow:none; position:absolute; top:10%; left:15%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            </small>
+          </div>
+        </section>
+
+
+
+<!-- ############################################################################### -->
+<!-- 1. Observation: Hierarchy of timescales i.e. network autocorrelation times -->
+<!-- 2. Our theory predicts that this is result of decreasing amount of input compensated by higher amount of recurrent strength-->
+<!-- 3. Can be understood for spiking neurons in framework of DMFT that autocorrelations emerge from random input -->
+<!-- 3b. transiently unstable regime (check Helias words) beneficial for memory capacity of reservoir-->
+<!-- 4. However input is no longer random but AT LEAST temporally correlated -->
+<!-- 5. Potentially also spatially correlated (cf. Darshan, etc) -->
+        <section style="min-height:1050px">
+          <h3>Temporal correlations in random networks with noise</h3>
+          <span class="fragment fade-in" data-fragment-index="1">
+            <div style="position:absolute; top:12%; left: 2%; width:50%;text-align:left">
+              Motivation: 
+            </div>
+            <div style="position:absolute; top:12%; left:15%; width:40%;text-align:left">
+              Hierarchy of timescales
+            </div>
+            <img src="./sources/2014_Murray et al_A hierarchy of intrinsic timescales across primate cortex_custom.png" height=85%  style="border:0; box-shadow:none; position:absolute; top:10%; left:63%">
+          </span>
+          <span class="fragment fade-in" data-fragment-index="2">
+            <div style="position:absolute; top:20%; left: 2%; width:50%;text-align:left">
+              Background:
+            </div>
+            <div style="position:absolute; top:20%; left:15%; width:50%;text-align:left" class="fragment fade-in" data-fragment-index="2">
+               Hierarchical processing memory
+            </div>
+            <div style="position:absolute; top:25%; left:15%; width:50%;text-align:left" class="fragment fade-in" data-fragment-index="3">
+               Emerging autocorrelations for uncorrelated input 
+            </div>
+              
+            <img src="./sources/2015_hasson_1-s2.0-S1364661315000923-main_fig2.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:35%; left:10%" class="fragment fade-in-then-out" data-fragment-index="2">
+
+            <span class="fragment fade-out" data-fragment-index="4">
+              <span class="fragment fade-in" data-fragment-index="3">
+                <div style="position:absolute; top:34%; left:2%; width:50%;text-align:left">
+                  <i>Spreading model:</i>
+                </div>
+                <img src="./results/fig_ER_tau.png" width=35%  style="border:0; box-shadow:none; position:absolute; top:40%; left:10%">
+              </span>
+            </span>
+            <span class="fragment fade-in-then-out" data-fragment-index="4">
+              <div style="position:absolute; top:34%; left:2%; width:50%;text-align:left">
+                <i>Leaky integrate-and-fire:</i>
+              </div>
+              <img src="./sources/2017_Mastrogiuseppe_Ostojic_Intrinsically-generated fluctuating activity in excitatory-inhibitory networks_lif_c.png" width=35%  style="border:0; box-shadow:none; position:absolute; top:40%; left:10%">
+            </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="5">
+            <div style="position:absolute; top:33%; left: 2%; width:50%;text-align:left">
+              Questions:
+            </div>
+            <div style="position:absolute; top:33%; left:15%; width:50%;text-align:left">
+               How does network amplify correlated input?
+            </div>
+            <span class="fragment fade-out" data-fragment-index="6">
+              <img src="./results_tailored/modular_serial.png" width=60%  style="border:0; box-shadow:none; position:absolute; top:65%; left:0%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="6">
+              <div style="position:absolute; top:38%; left:15%; width:50%;text-align:left">
+                 Stationary dynamics for non-vanishing feedback? 
+              </div>
+              <img src="./results_tailored/modular_serial_back.png" width=60%  style="border:0; box-shadow:none; position:absolute; top:65%; left:0%">
+            </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="11">
+            <div style="position:absolute; top:50%; left: 2%; width:60%;text-align:left">
+              <i style="color:#fc8d62c8">Collaborations with<br> V. Priesemann (MPIDS, Germany) and N. Brunel (Duke, USA)</i> 
+            </div>
+          </span>
+          
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            <span class="fragment fade-in" data-fragment-index="4"> Mastrogiuseppe &amp; Ostojic, PLoS Comput. Biol. (2017)</span><br>
+            <span class="fragment fade-in" data-fragment-index="3"> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span><br>
+            <span class="fragment fade-in" data-fragment-index="2"> Hasson, Chen, &amp; Honey, Trends in Cognitive Sciences (2015) </span><br>
+            <span class="fragment fade-in" data-fragment-index="1"> Murray et al., Nat. Neurosci. (2014) </span><br>
+            </small>
+          </div>
+        </section>
+        <!--
+            <span class="fragment fade-in" data-fragment-index="7">
+              <div style="position:absolute; top:43%; left:15%; width:50%;text-align:left">
+                 Optimal memory capacity along serial circuit? 
+              </div>
+              <img src="./results/fig_ER_tau.png" width=25%  style="border:0; box-shadow:none; position:absolute; top:10%; left:70%">
+              <img src="./sources/2018_schluecker_PhysRevX.8.041029.png" width=25%  style="border:0; box-shadow:none; position:absolute; top:50%; left:70%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="7"> Schuecker, Goedeke, &amp; Helias, Phys. Rev. X (2018)</span><br>
+        -->
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>My long-term research goal</h3>
+          <span >
+            <img src="./research_plan_graphical_sketch.png" width=70%  style="border:0; box-shadow:none; position:absolute; top:10%; left:15%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px;">
+          <h3>Spatio-temporal correlations in modular networks</h3>
+          <span class="fragment fade-in" data-fragment-index="1">
+            <div style="position:absolute; top:12%; left: 2%; width:50%;text-align:left">
+              Motivation: 
+            </div>
+            <div style="position:absolute; top:12%; left:15%; width:45%;text-align:left">
+              Combine processing and memory in single complex network. 
+            </div>
+            <span class="fragment fade-out" data-fragment-index="10">
+              <img src="./sources/2012_Eliasmith et al_A Large-Scale Model of the Functioning Brain_Fig1.png" height=80%  style="border:0; box-shadow:none; position:absolute; top:10%; left:58%">
+            </span>
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="10">
+            <div style="position:absolute; top:23%; left: 2%; width:50%;text-align:left">
+              Background: 
+            </div>
+            <div style="position:absolute; top:23%; left:15%; width:45%;text-align:left">
+              Parallel modules allow optimal rate encoding of stimulus intensity. 
+            </div>
+            <div style="position:absolute; top:33%; left:15%; width:45%;text-align:left" class="fragment fade-in" data-fragment-index="11">
+              Serial modules used for temporal integration. 
+            </div>
+            <span class="fragment fade-in" data-fragment-index="10">
+              <img src="./results_tailored/modular_parallel.png" width=35%  style="border:0; box-shadow:none; position:absolute; top:15%; left:62%">
+            </span>
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="20">
+            <div style="position:absolute; top:40%; left: 2%; width:50%;text-align:left">
+              Questions: 
+            </div>
+            <div style="position:absolute; top:40%; left:15%; width:50%;text-align:left">
+              What spatio-temporal correlations arise in fundamental topologies?<br> (parallel, hierarchical, small-world,...)
+            </div>
+            <span class="fragment fade-in" data-fragment-index="21">
+              <div style="position:absolute; top:55%; left:15%; width:45%;text-align:left">
+                 Can we use interconnected, self-organizing modules for computation with parallel neuromorphic processors (or cultures)?
+              </div>
+            </span>
+          </span>
+
+          <span class="fragment fade-in" data-fragment-index="30">
+            <div style="position:absolute; top:73%; left: 2%; width:60%;text-align:left">
+              <i style="color:#fc8d62c8">Collaborations with<br>P. Sollich (Göttingen) and D. Muir (aiCTX, Zurich, Switzerland) </i>
+            </div>
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="21"> Zierenberg, Wilting &amp; Priesemann, Phys. Rev. X (2018) </span><br>
+              <span class="fragment fade-in" data-fragment-index="11"> Murray et al., Nat. Neurosci. (2014) </span><br>
+              <span class="fragment fade-in" data-fragment-index="10"> Zierenberg, Wilting, Priesemann, &amp; Levina, arXiv (2019) </span><br>
+              <span class="fragment fade-in" data-fragment-index="0"> Eliasmith et al., Science (2012)</span><br>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>My long-term research goal</h3>
+          <span >
+            <img src="./research_plan_graphical_sketch.png" width=70%  style="border:0; box-shadow:none; position:absolute; top:10%; left:15%">
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            </small>
+          </div>
+        </section>
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Griffiths phase in heterogeneous networks</h3>
+          <span class="fragment fade-in" data-fragment-index="1">
+            <div style="position:absolute; top:12%; left: 2%; width:50%;text-align:left">
+              Motivation: 
+            </div>
+            <div style="position:absolute; top:12%; left:15%; width:40%;text-align:left">
+              Robust spatio-temporal correlations and network variability
+            </div>
+            <span class="fragment fade-out" data-fragment-index="3">
+              <img src="./sources/echo_state.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:10%; left:57%">
+            </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="2">
+            <div style="position:absolute; top:24%; left: 2%; width:50%;text-align:left">
+              Examples: 
+            </div>
+            <div style="position:absolute; top:24%; left:15%; width:40%;text-align:left">
+              Encode crucial temporal signal with functional motifs (<i style="color:#fc8d62c8">aiCTX</i>)<br>
+              Re-wiring to store new memory
+            </div>
+            <span class="fragment fade-out" data-fragment-index="3">
+              <img src="./sources/aiCTX_ECG_setup.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:50%; left:57%">
+            </span>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="3">
+            <div style="position:absolute; top:40%; left: 2%; width:50%;text-align:left">
+              Background: 
+            </div>
+            <div style="position:absolute; top:40%; left:15%; width:45%;text-align:left">
+              Extended critical regime (Griffiths phase)
+            </div>
+            <span class="fragment fade-out" data-fragment-index="4">
+              <img src="./sources/2006_Vojta_Rare_region_effects_at_classical,_quantum_and_nonequilibrium_phase_transitions_Fig1.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:25%; left:57%">
+            </span>
+          </span>
+          <span class="fragment fade-out" data-fragment-index="7">
+            <span class="fragment fade-in" data-fragment-index="5">
+              <img src="./sources/2013_Moretti_Muñoz_Griffiths phases and the stretching of criticality in brain networks_Fig1.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:15%; left:57%">
+            </span>
+            <span class="fragment fade-in-then-out" data-fragment-index="4">
+              <img src="./sources/2013_Moretti_Muñoz_Griffiths phases and the stretching of criticality in brain networks_FIg2.png" width=70%  style="border:0; box-shadow:none; position:absolute; top:45%; left:30%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="6">
+              <img src="./sources/2018_Cota et al_Griffiths phases in infinite-dimensional, non-hierarchical modular networks_Fig2.png" width=50%  style="border:0; box-shadow:none; position:absolute; top:48%; left:5%">
+            </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="6"> Cota et al., Sci. Rep. (2018)</span><br>
+              <span class="fragment fade-in" data-fragment-index="4"> Moretti &amp; Mu&ntilde;oz, Nat. Commun. (2013) </span><br>
+              <br>
+            </small>
+          </div>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="7">
+            <div style="position:absolute; top:47%; left: 2%; width:50%;text-align:left">
+              Question: 
+            </div>
+            <div style="position:absolute; top:47%; left:15%; width:45%;text-align:left">
+              Can we induce Griffith phase through heterogenous dynamics?
+            </div>
+            <span class="fragment fade-in" data-fragment-index="8">
+              <div style="position:absolute; top:57%; left:15%; width:45%;text-align:left">
+                - log-normal firing rates
+              </div>
+              <img src="./sources/2014_Buzsaki_firing_rates_distribution.png" width=25%  style="border:0; box-shadow:none; position:absolute; top:12%; left:65%">
+            </span>
+            <span class="fragment fade-in" data-fragment-index="9">
+              <div style="position:absolute; top:62%; left:15%; width:45%;text-align:left">
+                - networks with local growth rules
+              </div>
+              <img src="./results/fig_illustration_metric.png" width=22%  style="border:0; box-shadow:none; position:absolute; top:52%; left:67%">
+            </span>
+            <div style="position:absolute; top:67%; left:15%; width:45%;text-align:left"  class="fragment fade-in" data-fragment-index="10">
+              Can we use this for online ECG classification?
+            </div>
+          </span>
+          <span class="fragment fade-in" data-fragment-index="11">
+            <div style="position:absolute; top:73%; left: 2%; width:60%;text-align:left">
+              <i style="color:#fc8d62c8">Collaborations with<br> S. Luther &amp; U. Parlitz (Göttingen, Germany), <br>M. Mu&ntilde;oz (Granada, Spain), and D. Muir (aiCTX, Switzerland) </i>
+            </div>
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+              <span class="fragment fade-in" data-fragment-index="9"> Orlandi et al., Nat. Phys. (2013) </span><br>
+              <span class="fragment fade-in" data-fragment-index="8"> Buzsaki &amp; Mizuseki, Nat. Neurosci. Rev. (2014) </span><br>
+              <span class="fragment fade-in" data-fragment-index="3"> Vojta, J. Phys. Math. Gen. (2006) </span><br>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Me in Calgary</h3>
+          
+          <div style="position:absolute; top:12%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            I envision synergy with complexity science group: 
+            <div data-markdown>
+              <script type="text/template">
+                * Relation network structure and collective dynamics <!-- .element: class="fragment fade-in" data-fragment-index="1" -->
+                * Self-regulated networks <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              </script>
+            </div>
+          </div>
+          
+          <div style="position:absolute; top:40%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="10" >
+            I anticipate collaborations with Hotchkiss Brain Institute (HBI) - Brain &amp; Behavior:
+            <div data-markdown>
+              <script type="text/template">
+                * Network structure and function in cultures <!-- .element: class="fragment fade-in" data-fragment-index="11" -->
+                * Collective dynamics in zebra fish <!-- .element: class="fragment fade-in" data-fragment-index="12" -->
+              </script>
+            </div>
+          </div>
+
+          <div style="position:absolute; top:70%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="20" >
+            I am an overall social person with a history to organize 
+            <div data-markdown>
+              <script type="text/template">
+                * Regular tables<!-- .element: class="fragment fade-in" data-fragment-index="21" -->
+                * Workshops &amp; conferences <!-- .element: class="fragment fade-in" data-fragment-index="22" -->
+              </script>
+            </div>
+          </div>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            </small>
+          </div>
+        </section>
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Acknowledgments</h3>
+
+          <!-- collaborations -->
+          <div style="border:0; position:absolute; top:10%;left:5%; text-align:left; width:35%">
+            Scientific partners:
+            <div style=" font-size:22pt;"> 
+              <b>Viola Priesemann (MPIDS, Göttingen, Germany)</b><br>
+              <b>Jens Wilting  (now at Bosch)</b><br>
+              Joao Pinheiro Neto <br>
+              Paul Spitzner <br>
+              <b>Jorge de Heuvel</b><br>
+              Leonhard Leppin <br>
+              Bettina Royen <br>
+              <br>
+              <b>Andreas Neef</b><br>
+              <b>Stefan Luther </b><br>
+              <b>Ulrich Parlitz</b><br>
+              <br>
+              <b>Anna Levina (Tübingen, Germany)</b><br>
+              <br>
+              Wolfhard Janke (Leipzig, Germany)<br>
+              <br>
+              <b>Nicolas Brunel (Duke, USA)</b><br>
+              <b>Alessandro Sanzeni</b><br>
+              <br>
+              <b>Miguel A. Mu&ntilde;oz (Granada, Spain)</b><br>
+              <br>
+              Martin Weigel (Coventry, UK)<br>
+              Nikolaos G. Fytas <br>
+            </div>
+          </div>
+          
+          <div style="border:0; position:absolute; top:70.5%;left:45%; text-align:left; width:35%">
+            Industry partners:
+            <div style=" font-size:22pt;"> 
+              <br>
+              <b>Dylan Muir (aiCTX, Zurich)</b><br>
+            </div>
+          </div>
+          
+          <!-- group -->
+          <div style="border:0; position:absolute; top:10%;left:45%; text-align:left; width:40%">
+            Priesemann group:<br>
+            <img src="./sources/group_2019.jpg" width=100% style="border:0; box-shadow:none; background:none;" align=left>
+          </div>
+          <!-- Funding -->
+          <div style="border:0; position:absolute; top:10%;left:87%;text-align:left;width:13%">
+            Funding:
+            <img src="./logos/bccn.gif"                    width=100% style="border:0; box-shadow:none; background:none;" align="left">
+            <img src="./logos/Max-Planck-Gesellschaft.svg" width=100% style="border:0; box-shadow:none; background:none;" align=left >
+            <img src="./logos/JHS_Logo_RGB.jpg"            width=100% style="border:0; box-shadow:none; background:none;" align=left >
+          </div>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" >
+            <small>
+            </small>
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+<!-- ############################################################################### -->
+        <section style="min-height:1050px">
+          <h3>Appendix</h3>
+        </section>
+
+
+<!-- ############################################################################### -->
+<!-- todo-->
+        <section style="min-height:1050px">
+          <h3>Inferring autocorrelation time of subsampled systems with non-stationary external input </h3>
+          <div style="position:absolute; top:18%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="0" >
+            Observation: Neuroscience experiments assume consistent responses across trials. 
+          </div>
+          <div style="position:absolute; top:25%; left: 2%; width:96%;text-align:left" class="fragment fade-in" data-fragment-index="2" >
+            Assumption: Internal spreading dynamics are stable, but external input changes reliably. 
+          </div>
+          <span class="fragment fade-out" data-fragment-index="3">
+          <span class="fragment fade-in" data-fragment-index="1">
+            <img src="./sources/2009_pipa_Fig2.jpg" width=70%  style="border:0; box-shadow:none;position:absolute; top:35%;left:15%">
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <span>Pipa et al., Front. Integr. Neurosci. (2009)</span>
+              </small>
+            </div>
+          </span>
+          </span>
+          
+          <span class="fragment fade-out" data-fragment-index="6">
+          <span class="fragment fade-in" data-fragment-index="3">
+            <div style="position:absolute; top:35%; left: 2%; width:96%;text-align:left">
+              Model: 
+            </div>
+            <div style="position:absolute; top:35%; left:15%; width:70%;text-align:left">
+              Subsampled spreading process with an autoregressive representation
+              <p>$\hspace{3em}\mathbb{E}(A_{t+1}|A_t) = m A_t + \mathbb{E}(h_t)\hspace{1em}$ with $\hspace{1em}\mathbb{E}(a_{t}|A_t)=\alpha A_t $</p>
+              Generalization to multiple steps
+              <p>$\hspace{3em}\mathbb{E}(A_{t+k}|A_t) = m^k A_t +\sum_{l=1}^{k} m^{k-l} \cdot   \mathbb{E}(h_{t+l-1})$</p>
+              For stationary external input one can show a constant bias in
+              <p>$\hspace{3em}C(k)=\frac{\mathrm{Cov}(a_t,a_{t+k})}{\mathrm{Var}(a_t)} = bm^k=be^{-k\Delta t/\tau}$</p>
+            </div>
+            <div style="position:absolute; top:80%; left:15%; width:60%;text-align:left" class="fragment fade-in" data-fragment-index="5">
+              This is recovered for mean-corrected activity $\tilde{a}_t^i = a_t^i - \langle a_t\rangle$
+              <p>$\hspace{3em}b_t=1/(1-(1-\alpha^{-1})F_t^{-1})$</p>
+            </div>
+            <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+              <small>
+                <span>Wilting &amp; Priesemann, Nat. Commun. (2018)</span>
+              </small>
+            </div>
+          </span>
+          </span>
+            
+          <span class="fragment fade-in-then-out" data-fragment-index="4">
+            <img src="./results_jorge/BP_four_regimes_figure_gridplot.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="6">
+            <img src="./results_jorge/BP_four_regimes_figure_gridplot.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="10">
+            <div style="position:absolute; top:35%; left: 2%; width:96%;text-align:left">
+              Tests: 
+            </div>
+            <img src="./results_jorge/Deviation_Matrix_Paper.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+
+          <span class="fragment fade-in-then-out" data-fragment-index="20">
+            <div style="position:absolute; top:35%; left: 2%; width:96%;text-align:left">
+              Application: 
+            </div>
+            <img src="./results_jorge/Paper_Experimental_Results_new.png" width=70%  style="border:0; box-shadow:none;position:absolute; top:33%;left:15%">
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span>de Heuvel, Wilting, Becker, Priesemann &amp; Zierenberg, in preparation </span><br>
+            </small>
+          </div>
+        </section>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+			  margin: 0.01,
+			  width:  1920,
+      	height: 1080,
+			  center: false,
+			  viewDistance: 3,
+			  fragmentInURL: true,
+			  slideNumber:true,
+			  history:true,
+        transition:"none",
+        //transition:"convex",
+        //transitionSpeed:"normal",
+        transitionSpeed:"fast",
+
+	      math: {
+	      	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+	      	//mathjax: '/home/johannes/local_build/MathJax/MathJax.js',
+	      	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+	      },
+				dependencies: [
+				  // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+		      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		      // Interpret Markdown in <section> elements
+		      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      // Syntax highlight for <code> elements
+		      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		      // Zoom in and out with Alt+click
+		      { src: 'plugin/zoom-js/zoom.js', async: true },
+		      // Speaker notes
+		      { src: 'plugin/notes/notes.js', async: true },
+		      // MathJax
+		      { src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
