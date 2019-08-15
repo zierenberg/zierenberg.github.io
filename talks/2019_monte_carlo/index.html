@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Monte Carlo Simulations</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/mpi.css">
+		<link rel="stylesheet" href="../sim/montecarlo.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Monte Carlo -->
+		<script src="../sim/montecarlo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      function fun_y(x) {return Math.exp(x);  }
+      function fun_P(x) {return Math.exp(-Math.pow(x-0.5,2)/(2.*0.1*0.1))/Math.sqrt(2*Math.PI*0.1*0.1);}
+    </script>
+	</head>
+
+<!--
+  * Motivation NASA
+-->
+	<body >
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <div style="width:100%; min-height:1000px; max-height:1000px;">
+            <div style="padding-top:100px">
+              <h2>Introduction to Monte Carlo Simulations</h2>
+            </div>
+
+            <div style="padding-top:120px">
+              <b>Johannes Zierenberg</b><br><br>
+              Neural Systems Theory<br>
+              Max Planck Institute for Dynamics and Self-Organization
+            </div>
+          </div>
+        </section>
+
+        <section style="min-height:1050px">
+          <h3>Give me one example why we should need Monte Carlo simulations</h3>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="1">
+            <img src="../sources/nasa_moonwalk.jpg" width=48%  style="border:0; box-shadow:none; position:absolute; tpo: 7%; left:26%">
+          </span>
+
+          <div style="position:absolute; top:16%; left: 1%; width:50%; text-align:left" class="fragment fade-in" data-fragment-index="2" data-markdown>
+            <script type="text/template">
+              * Risk analysis <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+              * Model fitting <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+              * Financial models <!-- .element: class="fragment fade-in" data-fragment-index="4" -->
+              * Computational sciences <!-- .element: class="fragment fade-in" data-fragment-index="5" -->
+              * ... <!-- .element: class="fragment fade-in" data-fragment-index="6" -->
+            </script>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="4">
+          <span class="fragment fade-in" data-fragment-index="2">
+            <img src="../sources/nasa_monte_carlo_simulation_risk_analysis.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:10%; left:55%">
+          </span>
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="4">
+            <img src="../sources/cfi_sensitivity-analysis.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:20%; left:55%">
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="5">
+            <img src="../sources/2015_zierenberg_pre_LJ.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:12%; left:55%">
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left" class="fragment fade-in-then-out" data-fragment-index="1">
+            <small>
+              <br>
+              <span>Source: https://www.nasa.gov/specials/apollo50th/missions.html</span><br>
+            </small>
+          </div>
+          <span class="fragment fade-out" data-fragment-index="4">
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left"  class="fragment fade-in" data-fragment-index="2">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="2">Source: https://www.nasa.gov/centers/ivv/jstar/monte_carlo.html</span><br>
+            </small>
+          </div>
+          </span>
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left"  class="fragment fade-in-then-out" data-fragment-index="4">
+            <small>
+              <br>
+              <span class="fragment fade-in" data-fragment-index="2">Source: https://corporatefinanceinstitute.com/resources/knowledge/modeling/monte-carlo-simulation/</span><br>
+            </small>
+          </div>
+        </section>
+
+
+<!--
+  Basics
+-->
+        <section style="min-height:1050px">
+          <h3>Introduction to Monte Carlo simulation: Law of large numbers</h3>
+            <img src="../sources/wikipedia_400px-Lawoflargenumbers.svg.png" width=40%  style="border:0; box-shadow:none; position:absolute; top:12%; left:30%">
+          
+          <div style="position:absolute; top:60%; left: 2%; width:96%; text-align:left" class="fragment fade-in" data-fragment-index="2">
+            Law of large numbers: <br>
+            The average over i.i.d. random variables converges towards its expectation value.<br>
+            <br>
+            <span class="fragment fade-in" data-fragment-index="3">
+              We can thus approximate $\mathbb{E}(X)\approx \overline{X}=\frac{1}{N}\left(X_1+X_2+...+X_N\right)$.
+            </span>
+          </div>
+
+          
+          <div style="position:absolute; bottom:1%; left:1.0%; width=98%; text-align:left">
+            <small>
+              <br>
+              <span>i.i.d: independent and identically distributed</span><br>
+              <span>Source: wikipedia</span><br>
+            </small>
+          </div>
+        </section>
+
+<!--
+  simple sampling 
+; 
+-->
+      <section style="min-height:1050px">
+        <h3>Example: Estimate the expected fuel required for Apollo lunar module</h3>
+        <div style="position:absolute; top:13%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="1">
+          Assumptions:<br>
+          The amount of required fule grows exponentially with time $y=\exp(x)$.<br>
+          Landing time during training was normal distributed $P(x) = \exp(-(x-x_0)/(2\sigma^2))/\sqrt(2\pi\sigma^2)$.
+        </div>
+        <!--
+        <span class="fragment fade-out" data-fragment-index="10">
+        <span class="fragment fade-in" data-fragment-index="1">
+          <body onload="draw_y('canvas1',fun_y, 0,1,0,3)">
+          <canvas id="canvas1" style="position:absolute; bottom:20%; left:5%; height:50%; width:50%;"></canvas>
+          </body>
+        </span>
+        </span>
+        -->
+
+        <span class="fragment fade-in" data-fragment-index="10">
+          <body onload="simple_sampling_x01('canvas',fun_y, fun_P,0,1,0,5)" >
+          <canvas id="canvas" style="position:absolute; top:40%; left:2%; height:55%; width:50%;"></canvas>
+          <input id="start" type="button" value="start" style="position:absolute; top:32%; left:5%;  height:5%; width:10%;"/>
+          <input id="stop"  type="button" value="stop"  style="position:absolute; top:32%; left:15%; height:5%; width:10%;" />
+          </body>
+        </span>
+
+        <div style="position:absolute; top:35%; left:55%; width:45%; text-align:left" class="fragment fade-in" data-fragment-index="2">
+          Quantity of interest:<br> $\mathbb{E}(y)=\int_0^1 y P(x) dx$<br>
+          $\hspace{2em}\approx \frac{1}{N}\sum_i x_i P(x_i)$ with $x_i\sim 1/\text{#states}$
+          <pre>
+          <code data-trim data-noescape>
+          while i &lt; N:
+            x = rand01()
+            y = exp(x)
+            <mark>obs_y += y P(x)</mark>
+            N+=1
+            i+=1
+          obs_y /= N;
+          </code>
+          </pre>
+        </div>
+      </section>
+
+
+<!--
+  importance sampling Metropolis
+-->
+      <section style="min-height:1050px">
+        <h3>Importance sampling: Metropolis algorithm</h3>
+
+        <div style="position:absolute; top:13%; left: 1%; width:50%; text-align:left" class="fragment fade-in" data-fragment-index="1">
+          Goal: Sample states according to their probability<br>
+          <span  class="fragment fade-in" data-fragment-index="2"> 
+            Physicist motivation: $P(x)\propto e^{-\beta E(x)}$
+          </span>
+          <br>
+          <br>
+          <span  class="fragment fade-in" data-fragment-index="4"> 
+            Idea: Generate new states from old states such that we have a stationary $P(x)$ (Markov chain)
+          </span>
+        </div>
+        <span class="fragment fade-in" data-fragment-index="2">
+          <img src="../sources/energy_unimodal.png" width=30%  style="border:0; box-shadow:none; position:absolute; top:10%; left:60%">
+        </span>
+        <div style="position:absolute; top:40%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="1">
+          <span  class="fragment fade-in" data-fragment-index="5"> 
+            $$\dot{P}(x,t) = \int dx^\prime \left[P(x^\prime)p(x^\prime\to x) - P(x)p(x\to x^\prime)\right] \overset{!}{=}0$$
+          </span>
+          <span  class="fragment fade-in" data-fragment-index="6"> 
+            Detailed balance:
+            $\hspace{2em}P(x^\prime)p(x^\prime\to x) = P(x)p(x\to x^\prime) \to \frac{p(x\to x^\prime)}{p(x^\prime\to x)}= \frac{P(x^\prime)}{P(x)}$
+          </span>
+          <br>
+          <br>
+          <span  class="fragment fade-in" data-fragment-index="7"> 
+            Solution:
+            $\hspace{10em}p(x\to x^\prime) = \text{min}\left(1,\frac{P(x^\prime)}{P(x)}\right)$
+          </span>
+          <span  class="fragment fade-in" data-fragment-index="8"> 
+            $\hspace{13em}\phantom{p(x\to x^\prime)} = \text{min}\left(1,e^{-\beta\Delta E}\right)$
+          </span>
+    
+        </div>
+      </section>
+<!--
+  importance sampling Metropolis
+-->
+      <section style="min-height:1050px">
+        <h3>Monte Carlo simulations: Summary</h3>
+
+        <div style="position:absolute; top:15%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="1">
+          <b>Monte Carlo simulation:</b><br>
+          Generate states of phase space according to probability distribution and evaluate function of interest.<br>
+          Approximate expectation value of this function by averaing over the random realizations.<br>(<i>Law of large numbers</i>)
+        </div>
+        
+        <div style="position:absolute; top:40%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="1">
+          <b>Importance sampling:</b><br>
+          Generate new states from current state such that probability distribution is stationary.<br>
+          This is also called Markov chain Monte Carlo (no memory of the past required).
+        </div>
+        
+
+        <div style="position:absolute; top:60%; left: 1%; width:98%; text-align:left" class="fragment fade-in" data-fragment-index="2" data-markdown>
+          <script type="text/template">
+          There are a couple of things we have to be careful with:
+            * Thermalization (initial updates of importance sampling are transient) <!-- .element: class="fragment fade-in" data-fragment-index="2" -->
+            * Ergodicity (simulation has to be able to reach the full phase space)   <!-- .element: class="fragment fade-in" data-fragment-index="3" -->
+          </script>
+        </div>
+      </section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+			  margin: 0.01,
+			  width:  1920,
+      	height: 1080,
+			  center: false,
+			  viewDistance: 3,
+			  fragmentInURL: true,
+			  slideNumber:true,
+			  history:true,
+        transition:"fade",
+        transitionSpeed:"fast",
+
+	      math: {
+	      	//mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+	      	mathjax: '/home/johannes/local_build/MathJax/MathJax.js',
+	      	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+	      },
+				dependencies: [
+				  // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+		      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		      // Interpret Markdown in <section> elements
+		      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      // Syntax highlight for <code> elements
+		      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		      // Zoom in and out with Alt+click
+		      { src: 'plugin/zoom-js/zoom.js', async: true },
+		      // Speaker notes
+		      { src: 'plugin/notes/notes.js', async: true },
+		      // MathJax
+		      { src: 'plugin/math/math.js', async: true },
+				]
+			});
+		</script>
+		
+	</body>
+</html>
