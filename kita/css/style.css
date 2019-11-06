@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mainHeader {
+	height:70px;
+	background-color:#eee
+}
+
+#featured {
+	height:330px;
+	background-color:#ddd
+}
+
+#products {
+	height:360px;
+	background-color:#ccc
+}
+
+#blurbs {
+	height:320px;
+	background-color:#bbb
+}
+
+#mainFooter {
+	height:200px;
+	background-color:#aaa
+}
