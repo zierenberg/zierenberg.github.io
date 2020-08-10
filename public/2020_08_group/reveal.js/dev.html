@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Statistische Physik in den Neurowissenschaften: Artifizielle Netzwerke</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section style="min-height:1050px">
+          <h3>McCulloch-Pitts Neurone als Basis logischer Operationen</h3>
+
+          <img src="../illustration/McCulloch-Pitts/basic_unit.svg" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:55%; left:5%">
+          <div style="position:absolute; top:50%; left:5%; width=50%; text-align:left" data-markdown>
+            Regeln:
+            
+            $y=1$ : $w_1 x_1 + w_2 x_2 \geq b$ __und__ keine Inhibition
+            
+            $y=0$ : sonst
+          </div>
+          
+          <span class="fragment fade-in-then-out" data-fragment-index="2">
+            <u style="position:absolute; bottom:80%; right:40%">NOT:</u> 
+            <img src="../illustration/McCulloch-Pitts/NOT.svg" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:55%; right:5%">
+            <div style="position:absolute; bottom:30%; right:20%" data-markdown>
+              | $x_1$ | $y$ |
+              |-------|-----|
+              |   0   |  1  |
+              |   1   |  0  |
+            </div>  
+          </span>
+          <span class="fragment fade-in-then-out" data-fragment-index="3">
+            <u style="position:absolute; bottom:80%; right:40%">AND:</u> 
+            <img src="../illustration/McCulloch-Pitts/AND.svg" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:55%; right:5%">
+            <div style="position:absolute; bottom:15%; right:20%" data-markdown>
+              | $x_1$ | $x_2$ | $y$ |
+              |-------|-------|-----|
+              |   0   |   0   |  0  |
+              |   0   |   1   |  1  |
+              |   1   |   0   |  1  |
+              |   1   |   1   |  1  |
+            </div>  
+          </span>
+          <span class="fragment fade-in" data-fragment-index="4">
+            <u style="position:absolute; bottom:80%; right:40%">XOR:</u> 
+            <img src="../illustration/McCulloch-Pitts/XOR.svg" width=30%  style="border:0; box-shadow:none; position:absolute; bottom:55%; right:5%">
+            <div style="position:absolute; bottom:15%; right:20%" data-markdown>
+              | $x_1$ | $x_2$ | $y$ |
+              |-------|-------|-----|
+              |   0   |   0   |  0  |
+              |   0   |   1   |  1  |
+              |   1   |   0   |  1  |
+              |   1   |   1   |  0  |
+            </div>  
+          </span>
+
+          <div style="position:absolute; bottom:1%; left:1%; width=98%; text-align:left" >
+            <small>
+              Quelle: [McCulloch &#38; Pitts, 1943]
+            </small>
+          </div>
+        </section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+			  margin: 0.01,
+			  width:  1920,
+      	height: 1080,
+			  center: false,
+			  viewDistance: 3,
+			  fragmentInURL: true,
+			  slideNumber:true,
+
+	      math: {
+	      	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+	      	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+	      },
+				dependencies: [
+				  // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+		      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		      // Interpret Markdown in <section> elements
+		      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      // Syntax highlight for <code> elements
+		      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		      // Zoom in and out with Alt+click
+		      { src: 'plugin/zoom-js/zoom.js', async: true },
+		      // Speaker notes
+		      { src: 'plugin/notes/notes.js', async: true },
+		      // MathJax
+		      { src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
