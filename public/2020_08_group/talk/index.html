@@ -217,7 +217,7 @@
             Of course, this is not correct because $I$ is a discrete variable.<br>
             Instead, we now consider the stochastic evolution of $I$ by the master equation
             $$
-            \frac{dP_I(t)}{dt} = \sum_{i=0}^{I-1}\lambda_i P_{I-1}(t) + \mu(I+t)P_{I+1}(t) - \left(\sum_{i=0}^I\lambda_i + \mu\right)P_I(t)
+            \frac{dP_I(t)}{dt} = \left(\sum_{i=0}^{I-1}\lambda_i\right) P_{I-1}(t) + \mu(I+1)P_{I+1}(t) - \left(\sum_{i=0}^I\lambda_i + \mu\right)P_I(t)
             $$
         </div>
 
@@ -230,7 +230,7 @@
         <div class="fragment fade-in" data-fragment-index="1" style="position:absolute; top:12%; left:5%; width:80%; text-align:left">
             Our goal is to evaluate the Master equation
             $$
-            \frac{dP_I(t)}{dt} = \sum_{i=0}^{I-1}\lambda_i P_{I-1}(t) + \mu(I+t)P_{I+1}(t) - \left(\sum_{i=0}^I\lambda_i + \mu\right)P_I(t)
+            \frac{dP_I(t)}{dt} = \left(\sum_{i=0}^{I-1}\lambda_i\right) P_{I-1}(t) + \mu(I+1)P_{I+1}(t) - \left(\sum_{i=0}^I\lambda_i + \mu\right)P_I(t)
             $$
         </div>
 
