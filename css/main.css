@@ -40,6 +40,10 @@ html {
     background-image: linear-gradient(to right, rgba(248,249,250,0), rgba(248,249,250,1));
 }
 
+
+del.schutz {
+    text-decoration: none;
+}
 .sidebar {
 	-webkit-box-ordinal-group: 1;
 	-ms-flex-order: 0;
