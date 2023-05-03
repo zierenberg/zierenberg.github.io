@@ -64,7 +64,7 @@ del.schutz {
 		position: sticky;
 		/*position: absolute;*/
 		top: 0rem;
-		max-height: calc(100vh);
+		height: calc(100vh);
 		overflow-y: auto;
 		z-index: 100;
 		box-shadow: inset -1.5px 0 0 rgba(0, 0, 0, .1);
