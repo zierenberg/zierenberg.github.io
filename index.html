@@ -1,122 +1,273 @@
-<!doctype html5>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/main.css">
-	<title>Johannes Zierenberg</title>
+<meta charset="utf-8">
+<title>Johannes Zierenberg</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- navigation bar -->
-  <nav class="navbar fixed-top container navbar-expand-sm navbar-dark bg-dark">
-  	<a class="navbar-brand" href="#" onclick="loadcontent('home')">Johannes Zierenberg</a>
-  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  		<span class="navbar-toggler-icon"></span>
-  	</button>
-    <!--todo: collapse expand after click-->
-  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  		<ul class="navbar-nav ml-auto">
-  			<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbar_home">
-  				<a class="nav-link" href="#" onclick="loadcontent('home')">About</a>
-  			</li>
-            <!--
-  			<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbar_news">
-  				<a class="nav-link" href="#" onclick="loadcontent('news')">News</a>
-            </li>
-            -->
-  			<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbar_pubs">
-  				<a class="nav-link" href="#" onclick="loadcontent('pubs')">Research</a>
-  			</li>
-  			<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbar_talks">
-  				<a class="nav-link" href="#" onclick="loadcontent('talks')">Talks</a>
-  			</li>
-  			<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbar_outreach">
-  				<a class="nav-link" href="#" onclick="loadcontent('outreach')">Outreach</a>
-  			</li>
-  		</ul>
-  	</div>
-  </nav>
-	<div class="container">
-		<div class="row flex-xl-nowrap">
-			<!-- sidecolumn is col-3 col-xl-2 -->
-      <div class="col-12 col-md-3 col-xl-2 sidebar bg-light-grad">
-      	<div class="row">
-      		<div class="flex-column col-6 col-md-12">
-      			<img src="data/2023_johannes_small_square.jpg" name="johannes" class="rounded-circle sidebar-img mt-2 mb-2 mr-2">
-      		</div>
-      		<ul class="nav flex-column col-6 col-md-12 text-right">
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ">
-      					Google Scholar
-                <span data-feather="scholar2"></span>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://arxiv.org/a/zierenberg_j_1.html">
-      					ArXiv
-      					<span data-feather="arxiv">X</span>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://orcid.org/0000-0001-5840-3791">
-      					ORCID
-      					<span data-feather="orcid"></span>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://www.researchgate.net/profile/Johannes_Zierenberg">
-      					Research Gate
-      					<img class="svg feather" src="./img/academicons/ResearchGate.svg"></img>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://github.com/zierenberg">
-      					Github
-      					<span data-feather="github"></span>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://twitter.com/jozierenberg">
-      					Twitter
-      					<span data-feather="twitter"></span>
-      				</a>
-      			</li>
-      			<li class="nav-item">
-      				<a class="nav-link" href="https://www.linkedin.com/in/johannes-zierenberg-8ab0971a/">
-      					LinkedIn
-      					<span data-feather="linkedin"></span>
-      				</a>
-      			</li>
-      		</ul>
-      	</div>
-      </div>
 
-			<main class="col-12 col-md-9 col-xl-10 content" role="main">
-	    <div id="content"></div>
-	  	</main>
-		</div>
-	</div>
+<header class="site-header">
+  <div class="container">
+    <h1>Johannes Zierenberg</h1>
+    <p class="subtitle">
+      Research scientist · Complex systems · Data-driven modeling · Freelance consulting
+    </p>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#cv">CV</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Photo + Social Links -->
+                <div class="about-sidebar">
+                    <img src="data/2023_johannes.jpg" alt="Johannes Zierenberg" class="about-photo">
+                    
+                    <div class="about-social">
+                        <a href="https://scholar.google.de/citations?user=qbTyWP4AAAAJ" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                        <a href="https://github.com/zierenberg" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/johannes-zierenberg-8ab0971a/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://arxiv.org/a/zierenberg_j_1.html" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>arXiv</span>
+                        </a>
+                        <a href="https://orcid.org/0000-0001-5840-3791" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-orcid"></i>
+                            <span>ORCID</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="about-content">
+                    <h2>About</h2>
+                    <p>
+                        I am a research scientist working on complex systems, data-driven modeling,
+                        and the dynamics of biological and artificial neural networks. I combine
+                        theory from statistical physics with data-driven inference to analyze
+                        time series, uncover latent states, and understand stability and regime
+                        transitions. In parallel with my academic research, I offer freelance
+                        consulting in scientific modeling, simulation, and data analysis for
+                        complex real-world systems.
+                    </p>
+                    <p>
+                        My research focuses on how collective neural dynamics emerge and respond
+                        to external interventions. Rather than treating stimulation or
+                        pharmacological inputs as static perturbations, I view interventions as
+                        control signals acting on latent neural dynamics. My goal is to develop
+                        digital twins that enable state-dependent prediction of intervention
+                        effects from time series data, providing a mechanism-aware framework for
+                        controlling neural systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv">
+    <div class="section-header">
+        <h2>Curriculum Vitae</h2>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+    </div>
+
+    <dl class="cv expandable" data-collapsed-height="12rem" id="cv-list">
+        <!-- loaded from data/cv.csv -->
+    </dl>
+
+    <button class="expand-toggle">See full CV</button>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+    <div class="section-header">
+        <h2>Publications</h2>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+    </div>
+    <ol class="list expandable" data-collapsed-height="9rem" id="publications-list" reversed>
+        <!-- Loaded from CSV -->
+    </ol>
+    <button class="expand-toggle">See full publication list</button>
+    </section>
+
+    <!-- Talks Section -->
+    <section id="talks">
+    <div class="section-header">
+        <h2>Talks</h2>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+    </div>
+    <ol class="list expandable" data-collapsed-height="7.5rem" id="talks-list" reversed>
+        <!-- Loaded from CSV -->
+    </ol>
+    <button class="expand-toggle">See more talks</button>
+    <!-- <div id="talks-map" style="height:400px; margin-top:2rem;"></div> -->
+    </section>
+
+    <section id="contact">
+    <h2>Contact</h2>
+    <p>
+        <strong>Email:</strong><br>
+        <span id="email"></span>
+        <span class="spamtrap">contact@example.com</span>
+    </p>
+    <p>
+        <strong>Location:</strong><br>
+        Göttingen, Germany
+    </p>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>
+      © 2026 Johannes Zierenberg ·
+      <a href="legal.html">Impressum & Datenschutz</a>
+    </small>
+  </div>
+</footer>
+
+<script>
+    // --- Email obfuscation ---
+    (() => {
+        const u = 'johannes.zierenberg';
+        const d = 'ds.mpg.de';
+        const e = document.getElementById('email');
+        if(e) e.innerHTML = `<a href="mailto:${u}@${d}">${u}@${d}</a>`;
+    })();
+
+    // --- Load CSV function ---
+    async function loadCSV(sectionId, csvFile, renderFn, isDL=false) {
+        const res = await fetch(csvFile);
+        const text = await res.text();
+        const lines = text.trim().split('\n');
+        const header = lines.shift().split(';');
+        const list = document.getElementById(sectionId);
+
+        const entries = lines.map(line => {
+            const parts = line.split(';').map(p => p.replace(/^"|"$/g,''));
+            let obj = {};
+            header.forEach((h,i) => obj[h] = parts[i]);
+            return obj;
+        });
+
+        entries.forEach(e => {
+            renderFn(list, e);  // <-- custom renderer for each section
+        });
+
+        // Expandable initial height
+        const collapsed = list.dataset.collapsedHeight;
+        list.style.setProperty('--collapsed-height', collapsed);
+       
+        // Buttons
+        const expandBtn = list.nextElementSibling;
+        const headerBtn = list.closest('section').querySelector('.collapse-header-btn');
+
+        function expand() {
+            list.classList.add('expanded');
+            expandBtn.textContent = 'Show less';
+            headerBtn.style.display = 'inline-block';
+        }
+
+        function collapse() {
+            list.classList.remove('expanded');
+            expandBtn.textContent = 'See full publication list';
+            headerBtn.style.display = 'none';
+        }
+
+        expandBtn.addEventListener('click', () => {
+            list.classList.contains('expanded') ? collapse() : expand();
+        });
+
+        headerBtn.addEventListener('click', collapse);
+    }
+
+    // --- Section-specific renderers ---
+    function renderCV(list, e) {
+        // section heading
+        if (e.section && !list.querySelector(`[data-section="${e.section}"]`)) {
+            const h = document.createElement('h3');
+            h.textContent = e.section;
+            h.dataset.section = e.section;
+            h.className = 'cv-section';
+            list.appendChild(h);
+        }
+
+        const dt = document.createElement('dt');
+        dt.textContent = e.date || '';
+
+        const dd = document.createElement('dd');
+        dd.innerHTML = `
+            <strong>${e.role || ''}</strong><br>
+            ${e.institution || ''}${e.location ? ', ' + e.location : ''}
+            ${e.note ? `<div class="cv-note">${e.note}</div>` : ''}
+        `;
+
+        list.appendChild(dt);
+        list.appendChild(dd);
+    }
 
 
-	<!-- Icons -->
-	<script src="./js/feather.min.js"></script>
-  <script src="./js/replacesvg.js"></script>
-  <script>
-    feather.replace();
-    replace_svg();
-  </script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    loadcontent('home')
-  });
-  </script>
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    function renderPublication(list, e) {
+        const li = document.createElement('li');
+        // Build authors string (comma separated)
+        const authors = e.authors || '';
+        // Volume and pages (only if they exist)
+        const volPages = (e.volume ? e.volume : '') + (e.pages ? ', ' + e.pages : '');
+        // Full inner HTML
+        li.innerHTML = `
+            ${authors}, <strong>${e.title || ''}</strong>,
+            <em>${e.journal || ''}</em> 
+            ${volPages} (${e.year || ''})
+        `.trim().replace(/\s+/g, ' '); // clean extra spaces
+
+        list.appendChild(li);
+    }
+
+    function renderTalk(list, e) {
+        const li = document.createElement('li');
+        // Display date first, then title, then type
+        const date = e.date || '';
+        const title = e.title || '';
+        const type = e.type ? `(${e.type})` : '';
+        const venuePlace = [e.venue, e.place].filter(x => x).join(', '); // handle missing venue/place
+        const comments = e.comments ? ` - ${e.comments}` : '';
+
+        li.innerHTML = `
+            ${title} ${type} <br>
+            <em>${venuePlace}</em>, ${date} ${comments}
+        `.trim().replace(/\s+/g, ' ');
+
+        list.appendChild(li);
+    }
+
+
+  // --- Initialize all ---
+  loadCSV('cv-list','data/cv.csv', renderCV);
+  loadCSV('publications-list','data/publications.csv', renderPublication);
+  loadCSV('talks-list','data/talks.csv', renderTalk);
+</script>
 </body>
 </html>
