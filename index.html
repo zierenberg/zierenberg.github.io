@@ -90,39 +90,52 @@
     <section id="cv">
     <div class="section-header">
         <h2>Curriculum Vitae</h2>
-        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">
+            <span class="expand-toggle-inner">
+            Show less
+            </span>
+        </button>
     </div>
-
-    <dl class="cv expandable" data-collapsed-height="18rem" id="cv-list">
+     <dl class="cv expandable" data-collapsed-height="18rem" id="cv-list">
         <!-- loaded from data/cv.csv -->
-    </dl>
+     </dl>
 
-    <button class="expand-toggle">See full CV</button>
+    <button class="expand-toggle">
+        <span class="expand-toggle-inner"> See full CV </span>
+    </button>   
     </section>
 
     <!-- Publications Section -->
     <section id="publications">
     <div class="section-header">
         <h2>Publications</h2>
-        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">
+            <span class="expand-toggle-inner">
+            Show less
+            </span>
+        </button>
     </div>
     <ol class="list expandable" data-collapsed-height="18rem" id="publications-list" reversed>
         <!-- Loaded from CSV -->
     </ol>
-    <button class="expand-toggle">See full publication list</button>
+    <button class="expand-toggle"><span class="expand-toggle-inner">See full publication list</span></button>
     </section>
 
     <!-- Talks Section -->
     <section id="talks">
     <div class="section-header">
         <h2>Talks</h2>
-        <button class="collapse-header-btn expand-toggle" style="display:none;">Show less</button>
+        <button class="collapse-header-btn expand-toggle" style="display:none;">
+            <span class="expand-toggle-inner">
+            Show less
+            </span>
+        </button>
     </div>
     <ol class="list expandable" data-collapsed-height="18rem" id="talks-list" reversed>
         <!-- Loaded from CSV -->
     </ol>
-    <button class="expand-toggle">See more talks</button>
-    <!-- <div id="talks-map" style="height:400px; margin-top:2rem;"></div> -->
+    <button class="expand-toggle">
+        <span class="expand-toggle-inner">See more talks</span></button>
     </section>
 
     <section id="contact">
@@ -185,15 +198,20 @@
         const expandBtn = list.nextElementSibling;
         const headerBtn = list.closest('section').querySelector('.collapse-header-btn');
 
+        // because buttons move
+        const expandInner = expandBtn.querySelector('.expand-toggle-inner');
+        const headerInner = headerBtn.querySelector('.expand-toggle-inner');
+
         function expand() {
             list.classList.add('expanded');
-            expandBtn.textContent = 'Show less';
+            expandInner.textContent = 'Show less';
+            headerInner.textContent = 'Show less';
             headerBtn.style.display = 'inline-block';
         }
 
         function collapse() {
             list.classList.remove('expanded');
-            expandBtn.textContent = 'See full publication list';
+            expandInner.textContent = 'See full publication list';
             headerBtn.style.display = 'none';
         }
 

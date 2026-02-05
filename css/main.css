@@ -185,7 +185,7 @@ h2 {
 .section-header {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.5rem;      
+  gap: 1.5rem;      
   margin-bottom: 0.5rem;
 }
 
@@ -228,18 +228,39 @@ h2 {
 }
 
 .expand-toggle {
+  display: inline-flex;
+  align-items: center;
+
   background: none;
   border: none;
-  color: var(--accent);
   font: inherit;
   cursor: pointer;
-  padding: 0;
+
+  padding: 0.35rem 0.7rem;   /* ← padding lives here, not on hover */
   margin-top: 0.5rem;
+  border-radius: 6px;
+
+  color: var(--fg);
+  transition: background 0.2s ease;
+}
+
+.expand-toggle-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  color: var(--accent);
+  transition: transform 0.2s ease;
 }
 
 .expand-toggle:hover {
-  text-decoration: underline;
+  background: var(--border);
 }
+.expand-toggle:hover .expand-toggle-inner {
+  transform: translateX(3px);
+  color: var(--accent)
+}
+
 
 /* Lists */
 .list {
