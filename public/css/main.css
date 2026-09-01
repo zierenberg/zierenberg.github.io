@@ -1,19 +1,26 @@
-/* colors for light and dark mode */
+/* Palette anchored on the site's own logo mark (#36393d anthracite).
+   Dark mode reuses that exact anthracite as the page background. */
 :root {
-  --bg: #f5f5f5;
-  --fg: #1f2328;
-  --muted: #5c6370;
-  --accent: #2f6feb;
-  --border: #d0d7de;  
+  --bg: #f6f6f5;
+  --fg: #24262a;
+  --muted: #6b6e74;
+  --accent: #36393d;
+  --border: #dcdcda;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #18181b;
-    --fg: #c9d1d9;
-    --muted: #8b949e;
-    --accent: #58a6ff;
-    --border: #30363d;
+    --bg: #36393d;
+    --fg: #ececea;
+    --muted: #a6a9ae;
+    --accent: #ececea;
+    --border: #4b4e53;
   }
+}
+
+/* Utility face for dates, years, and figures — sets data apart from prose */
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 * {
@@ -44,12 +51,13 @@ html {
   background: transparent;
   border: none;
 }
-.site-header {
-  padding-bottom: 0;
+.site-header .container {
+  padding-bottom: 0.5rem;
 }
 .site-header h1 {
   margin-bottom: 0;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .subtitle {
   margin-top: 0.25rem;
@@ -63,18 +71,50 @@ html {
   color: var(--muted);
 }
 
-/* Navigation */
+/* Navigation: sticky so long sections (CV/publications/talks) stay
+   quick to jump between while scrolling. Lives outside .site-header's
+   short .container so its containing block spans the full page —
+   nesting it in a short parent caps how far it can stick. */
 .nav {
-  margin-top: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .nav a {
-  margin-right: 1.25rem;
+  display: inline-block;
+  margin-right: 0.25rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
   text-decoration: none;
-  color: var(--accent);
+  color: var(--fg);
   font-weight: 500;
+  transition: background 0.2s ease;
 }
 .nav a:hover {
+  background: var(--border);
+}
+
+section[id] {
+  scroll-margin-top: 3.5rem;
+}
+
+/* Content links (publication titles, footer, contact email) */
+main a,
+.site-footer a {
+  color: var(--fg);
   text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+main a:hover,
+.site-footer a:hover {
+  text-decoration-color: var(--accent);
 }
 
 /* General Content */
@@ -83,6 +123,7 @@ section {
 }
 h2 {
   margin-bottom: 0.75rem;
+  text-wrap: balance;
 }
 
 /* About Section */
@@ -109,32 +150,58 @@ h2 {
 .about-social {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.1rem;
 }
 
 .about-social a {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.45rem 0.6rem;
-  color: var(--fg);
+  gap: 0.55rem;
+  padding: 0.3rem 0.4rem;
+  color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.2;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .about-social a:hover {
   background: var(--border);
-  color: var(--accent);
+  color: var(--fg);
   transform: translateX(3px);
 }
 
-.about-social a i {
-  width: 18px;
-  font-size: 1rem;
-  text-align: center;
-  color: var(--accent);
+/* Icons are self-hosted single-color SVGs (icons/*.svg), painted via
+   currentColor through a CSS mask so they still track the theme/hover
+   color without needing to inline the markup. */
+.icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.icon-graduation-cap { mask-image: url('../icons/graduation-cap.svg'); -webkit-mask-image: url('../icons/graduation-cap.svg'); }
+.icon-github          { mask-image: url('../icons/github.svg');          -webkit-mask-image: url('../icons/github.svg'); }
+.icon-linkedin         { mask-image: url('../icons/linkedin.svg');         -webkit-mask-image: url('../icons/linkedin.svg'); }
+.icon-file-lines       { mask-image: url('../icons/file-lines.svg');       -webkit-mask-image: url('../icons/file-lines.svg'); }
+.icon-orcid            { mask-image: url('../icons/orcid.svg');            -webkit-mask-image: url('../icons/orcid.svg'); }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-social a {
+    transition: none;
+  }
+  .about-social a:hover {
+    transform: none;
+  }
 }
 
 .about-content h2 {
@@ -166,9 +233,12 @@ h2 {
 }
 
 .cv dt {
-  font-weight: 600;
-  color: var(--accent);
-  padding-top: 0.1rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding-top: 0.2rem;
 }
 
 .cv dd {
@@ -249,7 +319,10 @@ h2 {
   align-items: center;
   gap: 0.7rem;
 
-  color: var(--accent);
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
   transition: transform 0.2s ease;
 }
 
@@ -258,7 +331,17 @@ h2 {
 }
 .expand-toggle:hover .expand-toggle-inner {
   transform: translateX(3px);
-  color: var(--accent)
+  text-decoration-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expand-toggle-inner,
+  .expandable {
+    transition: none;
+  }
+  .expand-toggle:hover .expand-toggle-inner {
+    transform: none;
+  }
 }
 
 
@@ -271,10 +354,6 @@ h2 {
 
 .list li {
   margin-bottom: 1rem;
-}
-
-.spamtrap {
-  display: none;
 }
 
 /* Mobile */
@@ -300,7 +379,7 @@ h2 {
     gap: 1rem;
   }
   
-  .about-social a span {
+  .about-social a .label {
     display: none;
   }
   

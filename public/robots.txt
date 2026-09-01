@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zierenberg.github.io/sitemap.xml
